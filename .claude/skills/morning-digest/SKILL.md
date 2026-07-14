@@ -1,11 +1,11 @@
 ---
 name: morning-digest
-description: "毎朝のニュース収集とGitHub Pagesダイジェスト生成"
+description: "毎朝のニュース収集とダイジェスト生成"
 ---
 
 # 朝刊ダイジェスト収集
 
-Hacker News・Lobsters・はてなブックマークIT人気エントリー・Zenn・Qiita・追加セキュリティソースを収集し、`digests/YYYY-MM-DD.json` に保存した上で、GitHub Pages公開用のHTML(`docs/`)を生成してcommit+pushする。
+Hacker News・Lobsters・はてなブックマークIT人気エントリー・Zenn・Qiita・追加セキュリティソースを収集し、`digests/YYYY-MM-DD.json` に保存した上で、GitHubのブラウザ表示でそのまま読める`digests/YYYY-MM-DD.md`を生成してcommit+pushする。
 
 ## 実行手順
 
@@ -58,23 +58,23 @@ Hacker News・Lobsters・はてなブックマークIT・Zenn・Qiita・セキ�
 
 詳細なスキーマは `dev-docs/digest-schema.md` を参照。
 
-### 4. HTML生成
+### 4. Markdown生成
 
 ```bash
 python3 scripts/render_digest.py
 ```
 
-`digests/*.json` すべてから `docs/YYYY-MM-DD.html` と `docs/index.html` を再生成する。
+`digests/*.json` すべてから `digests/YYYY-MM-DD.md` を再生成する。GitHubのブラウザ表示(github.com上でのファイル閲覧)でそのまま読める形式であり、別途HTMLやGitHub Pagesは不要。
 
 ### 5. commit + push
 
 ```bash
-git add digests/ docs/
+git add digests/
 git commit -m "docs: YYYY-MM-DDの朝刊ダイジェストを追加"
 git push
 ```
 
-**このリポジトリでは `digests/` と `docs/` 以外のGit履歴を操作してはならない。**
+**このリポジトリでは `digests/` 以外のGit履歴を操作してはならない。**
 
 ## 注意事項
 

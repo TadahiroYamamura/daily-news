@@ -3,7 +3,7 @@
 ## 初回セットアップ
 
 1. このリポジトリをGitHubにpushする(例: `TadahiroYamamura/news`)
-2. リポジトリの公開範囲(public/private)を決め、GitHub Pagesを`main`ブランチの`/docs`から配信する設定を有効化する(Settings → Pages)
+2. リポジトリの公開範囲(public/private)を決める。GitHub Pagesの設定は不要(`digests/YYYY-MM-DD.md`をGitHubのブラウザ表示でそのまま読むため)
 3. この端末でRemote Controlを有効化する
    - 対話セッション内で `/remote-control` を実行、またはターミナルで `claude remote-control`
    - スマホのClaudeアプリでQRコードをスキャンしてペアリングする
@@ -22,8 +22,8 @@
 
 ## Remote Controlでの深掘り
 
-1. スマホのClaudeアプリを開き、Remote Controlでこの端末のセッションに接続する
-2. GitHub Pagesで読んだ記事について「◯◯の記事を要約して」と依頼する
+1. スマホのブラウザ/GitHubアプリで`digests/YYYY-MM-DD.md`を開き、当日のダイジェストを読む
+2. 気になった記事があれば、Claudeアプリを開きRemote Controlでこの端末のセッションに接続し、「◯◯の記事を要約して」と依頼する
 3. Claudeが記事を取得・要約し、`archive/YYYY/MM/DD-<slug>.md`として保存・commit・pushする(規約は`README.md`を参照)
 4. ネットワークが10分以上不通になるとRemote Control接続はタイムアウトする。再接続すれば復帰する
 
@@ -31,6 +31,6 @@
 
 | 症状 | 確認ポイント |
 |---|---|
-| 朝になってもGitHub Pagesが更新されていない | `/loop`が失効していないか、この端末が起動・ネットワーク接続されているかを確認 |
+| 朝になっても`digests/YYYY-MM-DD.md`が追加されていない | `/loop`が失効していないか、この端末が起動・ネットワーク接続されているかを確認 |
 | Remote Controlから接続できない | この端末でClaude Codeプロセスが動作中か確認。プロセスが落ちていれば`claude remote-control`を再実行 |
 | 深掘りの要約が返ってこない | ネットワーク切断によるタイムアウトの可能性。再接続して再度依頼する |
