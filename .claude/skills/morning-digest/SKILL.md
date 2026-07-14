@@ -9,13 +9,13 @@ description: "毎朝のニュース収集とGitHub Pagesダイジェスト生成
 
 ## 実行手順
 
-### 0. 興味プロファイル読み込み
+### 0. 興味プロファイル・収集ソース読み込み
 
-`PROFILE.md` を読み込み、興味領域・収集ソース・★評価基準・配信フィルタ基準を把握する。CLAUDE.mdは参照しない(このファイルが単一情報源)。
+`PROFILE.md`(興味領域・★評価基準)と`SOURCES.md`(収集ソース一覧)を読み込む。CLAUDE.mdは参照しない(これらのファイルが単一情報源)。
 
 ### 1. トレンド情報の収集
 
-`PROFILE.md`の「収集ソース」に列挙された各URLをWebFetchツールで取得する。
+`SOURCES.md`に列挙された各URLをWebFetchツールで取得する。
 
 **はてなブックマークIT**
 - 各エントリーの**タイトル、元記事URL、ブックマーク数**を必ず取得する
@@ -45,7 +45,7 @@ bash scripts/get_all_reddit.sh
 
 ### 3. JSON書き出し
 
-`PROFILE.md`の「配信フィルタ基準」に従い、`interest_level >= 2`(★★以上)の記事のみを抽出し、`digests/YYYY-MM-DD.json`(実行日の日付)に以下の形式で書き出す。
+`dev-docs/digest-schema.md`の「配信フィルタ基準」に従い、`interest_level >= 2`(★★以上)の記事のみを抽出し、`digests/YYYY-MM-DD.json`(実行日の日付)に以下の形式で書き出す。
 
 ```json
 {

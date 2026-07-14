@@ -9,7 +9,8 @@
 ```
 news/
 ├── .claude/skills/morning-digest/SKILL.md  # 収集・評価・JSON/HTML生成・commit/push
-├── PROFILE.md                    # 興味プロファイルの単一情報源
+├── PROFILE.md                    # 興味プロファイルの単一情報源(興味領域・★評価基準)
+├── SOURCES.md                    # 収集ソース一覧(はてブ/HN/Reddit/セキュリティブログ)
 ├── scripts/
 │   ├── get_all_reddit.sh         # Reddit 13サブレディット一括取得
 │   └── render_digest.py          # digests/*.json → docs/*.html

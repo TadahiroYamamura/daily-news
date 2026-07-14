@@ -34,7 +34,11 @@
 | `articles[].category` | string | ○ | `AI` / `Security` / `OSS` / `Career` 等の分類 |
 | `articles[].note` | string | 任意 | 興味領域とのマッチング理由・発信への活用メモ |
 
+## 配信フィルタ基準
+
+- `digests/YYYY-MM-DD.json`に書き出すのは `interest_level >= 2`(★★以上、`PROFILE.md`の興味度★評価基準に基づく)の記事のみとする
+- ★1件のみの記事はGitHub Pagesの一覧には出さず、収集ログとしても残さない(ノイズを増やさないため)
+
 ## 契約上の注意
 
-- `digests/YYYY-MM-DD.json`に書き出すのは`PROFILE.md`の配信フィルタ基準(`interest_level >= 2`)を満たす記事のみ
 - `scripts/render_digest.py`はこのファイルの内容をそのままHTMLに変換する。フィールド名を変更する場合は`render_digest.py`と`tests/test_render_digest.py`を同一コミットで更新すること
