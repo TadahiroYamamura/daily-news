@@ -26,10 +26,10 @@
 |---|---|---|---|
 | `date` | string | ○ | `YYYY-MM-DD`形式。ファイル名(`digests/YYYY-MM-DD.json`)と一致させる |
 | `articles[].id` | string | ○ | ソース名+URLベースのスラッグ等、安定した識別子。`archive/YYYY/MM/DD-<slug>.md`のファイル名にも流用する |
-| `articles[].source` | string | ○ | `hatena_it` / `hacker_news` / `reddit_<subreddit>` / `security_blog` のいずれか |
+| `articles[].source` | string | ○ | `hatena_it` / `hacker_news` / `lobsters` / `zenn` / `qiita` / `security_blog_aikido` / `security_blog_wiz` のいずれか |
 | `articles[].title` | string | ○ | 日本語(英語記事は翻訳済み) |
-| `articles[].url` | string | ○ | はてブ=元記事URL、HN=コメントページURL、Reddit=コメントページURL |
-| `articles[].score_label` | string | ○ | 表示用のスコア文字列(例: `312 users`, `120pt`, `88 ups`) |
+| `articles[].url` | string | ○ | はてブ=元記事URL、HN/Lobsters=コメントページURL、Zenn/Qiita=記事URL |
+| `articles[].score_label` | string | ○ | 表示用のスコア文字列(例: `312 users`, `120pt`)。Zenn/Qiita/セキュリティブログは件数指標がないため空文字列 |
 | `articles[].interest_level` | number | 推奨 | 1〜3の★評価。欠損時は`render_digest.py`側で★1相当として扱う |
 | `articles[].category` | string | ○ | `AI` / `Security` / `OSS` / `Career` 等の分類 |
 | `articles[].note` | string | 任意 | 興味領域とのマッチング理由・発信への活用メモ |

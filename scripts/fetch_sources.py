@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Hacker News・はてなブックマーク・セキュリティブログを決定論的に取得する。
+"""Hacker News・Lobsters・はてなブックマーク・Zenn・Qiita・セキュリティブログを決定論的に取得する。
 
-LLMによるページ読解に頼っていたHatena/HNの抽出を、構造化API/RSSの
+LLMによるページ読解に頼っていた抽出を、構造化API/RSS(Atom含む)の
 パースに置き換えることで、実行のたびに結果がブレるのを防ぐ。
 """
 
@@ -15,10 +15,18 @@ HN_TOPSTORIES_URL = "https://hacker-news.firebaseio.com/v0/topstories.json"
 HN_ITEM_URL = "https://hacker-news.firebaseio.com/v0/item/{}.json"
 HN_LIMIT = 30
 
+LOBSTERS_URL = "https://lobste.rs/hottest.json"
+LOBSTERS_LIMIT = 25
+
 HATENA_FEEDS = {
     # IT配下の詳細カテゴリ(プログラミング/AI・機械学習 等)には専用RSSが存在しない(404を確認済み)。
     # 総合IT枠(30件)から、興味度評価ステップ(LLM)でカテゴリ・関連度を判定する。
     "hatena_it": "https://b.hatena.ne.jp/hotentry/it.rss",
+}
+
+JAPANESE_TECH_FEEDS = {
+    "zenn": "https://zenn.dev/feed",
+    "qiita": "https://qiita.com/popular-items/feed",
 }
 
 SECURITY_BLOG_FEEDS = {
@@ -44,17 +52,29 @@ def _child_text(elem, name):
     return None
 
 
+def _child_link(elem):
+    # RSS(1.0/2.0): <link>テキストURL</link>。Atom(Qiita等): <link href="..." rel="alternate"/>
+    links = [c for c in elem if _local_name(c.tag) == "link"]
+    if not links:
+        return None
+    for link in links:
+        if link.get("rel") in (None, "alternate") and link.get("href"):
+            return link.get("href")
+    text = (links[0].text or "").strip()
+    return text or links[0].get("href")
+
+
 def parse_rss_items(raw_bytes):
-    """RSS 1.0(はてな)・RSS 2.0(一般ブログ)の両方から title/link/bookmarkcount を抽出する。"""
+    """RSS 1.0(はてな)・RSS 2.0(一般ブログ)・Atom(Qiita等)から title/link/bookmarkcount を抽出する。"""
     root = ET.fromstring(raw_bytes)
     items = []
     for elem in root.iter():
-        if _local_name(elem.tag) != "item":
+        if _local_name(elem.tag) not in ("item", "entry"):
             continue
         items.append(
             {
                 "title": _child_text(elem, "title") or "",
-                "url": _child_text(elem, "link") or "",
+                "url": _child_link(elem) or "",
                 "bookmarkcount": _child_text(elem, "bookmarkcount"),
             }
         )
@@ -77,6 +97,19 @@ def hn_item_to_article(item):
         "url": url,
         "score_label": f"{item.get('score', 0)}pt",
         "comment_count": item.get("descendants", 0),
+    }
+
+
+def lobsters_item_to_article(item):
+    # 元記事ではなくコメントページURLを使う(HNと同じ規約。dev-docs/digest-schema.md参照)
+    url = item["comments_url"]
+    return {
+        "source": "lobsters",
+        "id": article_id("lobsters", url),
+        "title": item.get("title", ""),
+        "url": url,
+        "score_label": f"{item.get('score', 0)}pt",
+        "comment_count": item.get("comment_count", 0),
     }
 
 
@@ -113,6 +146,11 @@ def fetch_hn(limit=HN_LIMIT, fetch_json=_default_fetch_json):
     return articles
 
 
+def fetch_lobsters(limit=LOBSTERS_LIMIT, fetch_json=_default_fetch_json):
+    items = fetch_json(LOBSTERS_URL)[:limit]
+    return [lobsters_item_to_article(item) for item in items]
+
+
 def fetch_rss_source(source, url, limit=None, fetch_bytes=_default_fetch_bytes):
     raw = fetch_bytes(url)
     entries = parse_rss_items(raw)
@@ -137,11 +175,15 @@ def fetch_rss_source(source, url, limit=None, fetch_bytes=_default_fetch_bytes):
 
 def fetch_all():
     articles = fetch_hn()
+    articles.extend(fetch_lobsters())
 
     hatena_articles = []
     for source, url in HATENA_FEEDS.items():
         hatena_articles.extend(fetch_rss_source(source, url))
     articles.extend(dedupe_by_url(hatena_articles))
+
+    for source, url in JAPANESE_TECH_FEEDS.items():
+        articles.extend(fetch_rss_source(source, url))
 
     for source, url in SECURITY_BLOG_FEEDS.items():
         articles.extend(fetch_rss_source(source, url, limit=SECURITY_BLOG_LIMIT))

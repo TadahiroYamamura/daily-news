@@ -7,8 +7,10 @@ from fetch_sources import (
     article_id,
     dedupe_by_url,
     fetch_hn,
+    fetch_lobsters,
     fetch_rss_source,
     hn_item_to_article,
+    lobsters_item_to_article,
     parse_rss_items,
 )
 
@@ -49,6 +51,41 @@ PLAIN_RSS2_FIXTURE = b"""<?xml version="1.0" encoding="utf-8"?>
 </channel>
 </rss>
 """
+
+ATOM_FIXTURE = b"""<?xml version="1.0" encoding="UTF-8"?>
+<feed xml:lang="ja-JP" xmlns="http://www.w3.org/2005/Atom">
+<title>Qiita - \xe4\xba\xba\xe6\xb0\x97\xe3\x81\xae\xe8\xa8\x98\xe4\xba\x8b</title>
+<entry>
+<link rel="alternate" type="text/html" href="https://qiita.com/example/items/abc123"/>
+<title>\xe8\xa8\x98\xe4\xba\x8b\xe3\x82\xbf\xe3\x82\xa4\xe3\x83\x88\xe3\x83\xab1</title>
+</entry>
+<entry>
+<link rel="alternate" type="text/html" href="https://qiita.com/example/items/def456"/>
+<title>\xe8\xa8\x98\xe4\xba\x8b\xe3\x82\xbf\xe3\x82\xa4\xe3\x83\x88\xe3\x83\xab2</title>
+</entry>
+</feed>
+"""
+
+LOBSTERS_FIXTURE = [
+    {
+        "short_id": "yf6vbc",
+        "title": "Just Let Me Write Digits",
+        "url": "https://gendignoux.com/blog/2026/07/13/input-digits.html",
+        "score": 80,
+        "comment_count": 22,
+        "tags": ["a11y", "javascript", "web"],
+        "comments_url": "https://lobste.rs/s/yf6vbc/just_let_me_write_digits",
+    },
+    {
+        "short_id": "abc123",
+        "title": "Another Lobsters Post",
+        "url": "https://example.com/post",
+        "score": 30,
+        "comment_count": 5,
+        "tags": ["security"],
+        "comments_url": "https://lobste.rs/s/abc123/another_lobsters_post",
+    },
+]
 
 
 def test_article_id_is_stable_and_source_prefixed():
@@ -149,3 +186,45 @@ def test_fetch_rss_source_orchestrates_with_injected_fetcher_and_limit():
     assert articles[0]["source"] == "hatena_it"
     assert articles[0]["title"] == "記事1"
     assert articles[0]["score_label"] == "312 users"
+
+
+def test_parse_rss_items_handles_atom_feed_with_href_link():
+    items = parse_rss_items(ATOM_FIXTURE)
+
+    assert items == [
+        {"title": "記事タイトル1", "url": "https://qiita.com/example/items/abc123", "bookmarkcount": None},
+        {"title": "記事タイトル2", "url": "https://qiita.com/example/items/def456", "bookmarkcount": None},
+    ]
+
+
+def test_fetch_rss_source_handles_atom_feed_via_injected_fetcher():
+    def fake_fetch_bytes(url):
+        return ATOM_FIXTURE
+
+    articles = fetch_rss_source("qiita", "https://example.com/feed", fetch_bytes=fake_fetch_bytes)
+
+    assert len(articles) == 2
+    assert articles[0]["source"] == "qiita"
+    assert articles[0]["url"] == "https://qiita.com/example/items/abc123"
+    assert articles[0]["score_label"] == ""
+
+
+def test_lobsters_item_to_article_uses_comments_url():
+    article = lobsters_item_to_article(LOBSTERS_FIXTURE[0])
+
+    assert article["source"] == "lobsters"
+    assert article["title"] == "Just Let Me Write Digits"
+    assert article["url"] == "https://lobste.rs/s/yf6vbc/just_let_me_write_digits"
+    assert article["score_label"] == "80pt"
+    assert article["comment_count"] == 22
+    assert article["id"] == article_id("lobsters", "https://lobste.rs/s/yf6vbc/just_let_me_write_digits")
+
+
+def test_fetch_lobsters_orchestrates_via_injected_fetcher_and_limit():
+    def fake_fetch_json(url):
+        return LOBSTERS_FIXTURE
+
+    articles = fetch_lobsters(limit=1, fetch_json=fake_fetch_json)
+
+    assert len(articles) == 1
+    assert articles[0]["title"] == "Just Let Me Write Digits"
