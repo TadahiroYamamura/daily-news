@@ -2,8 +2,6 @@
 
 毎朝の技術ニュース収集 → GitHubのブラウザ表示で閲覧 → Remote Controlで深掘り・アーカイブ、を行うリポジトリ。
 
-設計の経緯・全体構成は `/home/develop/.claude/plans/tingly-greeting-lecun.md` を参照。
-
 ## ディレクトリ構成
 
 ```
