@@ -15,7 +15,8 @@ news/
 │   ├── fetch_sources.py          # 全ソースを決定論的に取得(API/RSS/Atom)
 │   ├── render_digest.py          # digests/*.json → GitHub Issue本文(チェックボックス付き)
 │   ├── gh.sh                     # .envのGITHUB_TOKENを読み込むghラッパー(gh直接使用は禁止)
-│   └── post_digest_issue.sh      # render_digest.py + gh issue create をまとめた投稿スクリプト
+│   ├── post_digest_issue.sh      # render_digest.py + gh issue create をまとめた投稿スクリプト
+│   └── archive_index.py          # 指定日のarchive/*.mdへのリンク一覧を生成(Issueコメント用)
 ├── digests/YYYY-MM-DD.json       # 収集結果(データソースそのもの)
 ├── archive/YYYY/MM/DD-<slug>.md  # 深掘り要約のアーカイブ
 ├── tests/
@@ -57,6 +58,7 @@ Remote Control経由で「今日のIssueをチェックして」等の依頼を�
    ```
 
 5. `git add archive/ && git commit -m "archive: <記事タイトルの要約>" && git push` を実行する
+6. その回の深掘りが完了したら、`python3 scripts/archive_index.py YYYY-MM-DD | scripts/gh.sh issue comment <number> --body-file -` でアーカイブへのリンク一覧をIssueのコメントとして投稿する。Issue本文(チェックボックス)は書き換えず、コメントとして追記する形にすることで、後からarchive/配下を直接探さなくてもIssueから要約に辿れるようにする
 
 ## 開発
 

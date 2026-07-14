@@ -11,7 +11,9 @@
       "Bash(git show)",
       "Bash(scripts/post_digest_issue.sh *)",
       "Bash(scripts/gh.sh issue list *)",
-      "Bash(scripts/gh.sh issue view *)"
+      "Bash(scripts/gh.sh issue view *)",
+      "Bash(scripts/gh.sh issue comment *)",
+      "Bash(python3 scripts/archive_index.py *)"
     ],
     "ask": [
       "Bash(git push *)"
