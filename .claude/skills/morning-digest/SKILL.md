@@ -5,7 +5,7 @@ description: "毎朝のニュース収集とダイジェスト生成"
 
 # 朝刊ダイジェスト収集
 
-Hacker News・Lobsters・はてなブックマークIT人気エントリー・Zenn・Qiita・追加セキュリティソースを収集し、`digests/YYYY-MM-DD.json` に保存した上で、GitHubのブラウザ表示でそのまま読める`digests/YYYY-MM-DD.md`を生成してcommit+pushする。
+Hacker News・Lobsters・はてなブックマークIT人気エントリー・Zenn・Qiita・追加セキュリティソースを収集し、`digests/YYYY-MM-DD.json` に保存してcommit+pushした上で、チェックボックス付きのGitHub Issueとして投稿する。GitHubの通常のファイル表示(blobビュー)ではMarkdownのチェックボックスはクリックできず、Issue/PR本文でのみタップでトグルできるため、この形式にしている。
 
 ## 実行手順
 
@@ -58,15 +58,7 @@ Hacker News・Lobsters・はてなブックマークIT・Zenn・Qiita・セキ�
 
 詳細なスキーマは `dev-docs/digest-schema.md` を参照。
 
-### 4. Markdown生成
-
-```bash
-python3 scripts/render_digest.py
-```
-
-`digests/*.json` すべてから `digests/YYYY-MM-DD.md` を再生成する。GitHubのブラウザ表示(github.com上でのファイル閲覧)でそのまま読める形式であり、別途HTMLやGitHub Pagesは不要。
-
-### 5. commit + push
+### 4. commit + push
 
 ```bash
 git add digests/
@@ -76,9 +68,20 @@ git push
 
 **このリポジトリでは `digests/` 以外のGit履歴を操作してはならない。**
 
+### 5. GitHub Issueとして投稿
+
+```bash
+scripts/post_digest_issue.sh YYYY-MM-DD
+```
+
+`digests/YYYY-MM-DD.json` を元にチェックボックス付きのIssue本文を生成し、タイトル・ラベルを固定値で組み立てて`gh issue create`まで実行する(内部で`scripts/gh.sh`経由の`render_digest.py`+`gh issue create`を行う)。エージェント側は日付を渡すだけでよく、`--title`や`--label`等のオプションを都度組み立てる必要はない。各記事は`- [ ] [タイトル](URL) — ★評価 ・ カテゴリ ・ スコア`の1行(必要なら次行にメモ)、末尾に`<!-- id:記事id -->`というHTMLコメントで`digests/*.json`の`id`を埋め込む(表示はされないが、後で深掘り対象を特定するための機械可読な手がかりになる)。`digest`ラベルが存在しない場合は事前に`scripts/gh.sh label create digest`で作成しておく。
+
+**`gh`コマンドは直接使わず、必ず`scripts/gh.sh`(`.env`の`GITHUB_TOKEN`を読み込んで`gh`を実行するラッパー)を経由すること。** `.env`を直接読む・sourceすることは禁止(`.claude/settings.json`のdenyルールでも制限している)。
+
 ## 注意事項
 
 - データ取得は`scripts/fetch_sources.py`のみを用いる。WebFetchでのページスクレイピングによる代替は行わない(決定論性が崩れるため)
+- Issue投稿は`scripts/post_digest_issue.sh`のみを用いる。深掘り時の`gh issue list`/`gh issue view`など読み取り系は`scripts/gh.sh`経由で行う
 - すべての記事にURLリンクを必ず含める(リンクなしは不可)
 - 英語のタイトルは日本語に翻訳する
 - 投票数(ups)/コメント数/ポイント数が高い記事を優先する

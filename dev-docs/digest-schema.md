@@ -37,8 +37,8 @@
 ## 配信フィルタ基準
 
 - `digests/YYYY-MM-DD.json`に書き出すのは `interest_level >= 2`(★★以上、`PROFILE.md`の興味度★評価基準に基づく)の記事のみとする
-- ★1件のみの記事は`digests/YYYY-MM-DD.md`の一覧には出さず、収集ログとしても残さない(ノイズを増やさないため)
+- ★1件のみの記事はGitHub Issueの一覧には出さず、収集ログとしても残さない(ノイズを増やさないため)
 
 ## 契約上の注意
 
-- `scripts/render_digest.py`はこのファイルの内容をそのまま`digests/YYYY-MM-DD.md`(GitHubのブラウザ表示でそのまま読めるMarkdown)に変換する。フィールド名を変更する場合は`render_digest.py`と`tests/test_render_digest.py`を同一コミットで更新すること
+- `scripts/render_digest.py`はこのファイルの内容をそのままGitHub Issue本文(チェックボックス付き、末尾に`<!-- id:... -->`で`id`を埋め込む)に変換する。フィールド名を変更する場合は`render_digest.py`と`tests/test_render_digest.py`を同一コミットで更新すること

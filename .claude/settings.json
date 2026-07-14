@@ -8,10 +8,22 @@
       "Bash(git commit -m *)",
       "Bash(git log --oneline)",
       "Bash(git status)",
-      "Bash(git show)"
+      "Bash(git show)",
+      "Bash(scripts/post_digest_issue.sh *)",
+      "Bash(scripts/gh.sh issue list *)",
+      "Bash(scripts/gh.sh issue view *)"
     ],
     "ask": [
       "Bash(git push *)"
+    ],
+    "deny": [
+      "Read(.env)",
+      "Edit(.env)",
+      "Write(.env)",
+      "Bash(cat .env)",
+      "Bash(cat *.env)",
+      "Bash(head .env)",
+      "Bash(grep * .env)"
     ]
   }
 }

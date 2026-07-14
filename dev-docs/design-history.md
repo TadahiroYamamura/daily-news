@@ -10,6 +10,7 @@
 4. **GitHub Pages(HTML生成)も過剰と判断** — 当初はGitHub Pages向けにJSON→HTMLを生成する`render_digest.py`を実装したが、実際に86件のダイジェストを生成してみたところ、この程度の一覧表示にHTML化・専用サイト配信は過剰と判断。GitHubの標準ブラウザ表示でそのまま読めるMarkdown生成に置き換え、`docs/`ディレクトリとGitHub Pages設定を丸ごと廃止した。
 5. **Reddit収集をLobstersに置き換え** — `old.reddit.com`のJSON APIが、家庭用ISP(実機のSoftBank回線)経由でも`403 blocked by network security`で安定してブロックされることを実機検証で確認。ブラウザ風ヘッダーを付けても回避できず、UA偽装では解決しない構造的な問題と判断し、同種のコミュニティ投票型SNSであるLobstersに切り替えた。あわせて日本語圏のエンジニア向けソースとしてZenn・Qiitaを追加した。
 6. **データ取得はAPI/RSS/Atomの決定論的パースに統一** — はてなブックマークとHacker NewsはもともとWebFetchでページをLLMに読ませて抽出させていたが、実行のたびに結果がブレるリスクがあった。全ソースを構造化データ(はてなRSSの`hatena:bookmarkcount`、HN Firebase API、Lobsters JSON API、Zenn/Qiitaのフィード)から決定論的に取得する方式に統一し、LLMの役割を翻訳・興味度評価・深掘り要約に限定した。
+7. **Markdownファイルをやめ、GitHub Issueのチェックボックスに一本化** — `digests/YYYY-MM-DD.md`をGitHubのブラウザ表示で読む方式にしていたが、「気になった記事をタップでチェックして選別したい」という要望を実現しようとしたところ、GitHubのMarkdownチェックボックスは通常のリポジトリファイル(blobビュー)ではクリックできず、Issue/PR本文でのみタップでトグルできる仕様であることが判明。`digests/*.md`の生成を廃止し、`digest`ラベル付きのGitHub Issueとして投稿する形式に切り替えた。深掘り対象の特定は、Issue本文に埋め込んだ`<!-- id:... -->`コメント(表示はされない)を`parse_checked_ids()`で読み取ることで行う。
 
 ## 今後の改善計画
 

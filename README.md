@@ -1,6 +1,6 @@
 # news
 
-毎朝の技術ニュース収集 → GitHubのブラウザ表示で閲覧 → Remote Controlで深掘り・アーカイブ、を行うリポジトリ。
+毎朝の技術ニュース収集 → GitHub Issueでチェックボックス選択 → Remote Controlで深掘り・アーカイブ、を行うリポジトリ。
 
 設計上の大きな方向転換の経緯と今後の改善計画は `dev-docs/design-history.md` を参照。
 
@@ -8,13 +8,15 @@
 
 ```
 news/
-├── .claude/skills/morning-digest/SKILL.md  # 収集・評価・JSON/Markdown生成・commit/push
+├── .claude/skills/morning-digest/SKILL.md  # 収集・評価・JSON保存・Issue投稿
 ├── PROFILE.md                    # 興味プロファイルの単一情報源(興味領域・★評価基準)
 ├── SOURCES.md                    # 収集ソース一覧(HN/Lobsters/はてブ/Zenn/Qiita/セキュリティブログ)
 ├── scripts/
 │   ├── fetch_sources.py          # 全ソースを決定論的に取得(API/RSS/Atom)
-│   └── render_digest.py          # digests/*.json → digests/*.md
-├── digests/YYYY-MM-DD.{json,md}  # 収集結果(json)とGitHub表示用Markdown(md)
+│   ├── render_digest.py          # digests/*.json → GitHub Issue本文(チェックボックス付き)
+│   ├── gh.sh                     # .envのGITHUB_TOKENを読み込むghラッパー(gh直接使用は禁止)
+│   └── post_digest_issue.sh      # render_digest.py + gh issue create をまとめた投稿スクリプト
+├── digests/YYYY-MM-DD.json       # 収集結果(データソースそのもの)
 ├── archive/YYYY/MM/DD-<slug>.md  # 深掘り要約のアーカイブ
 ├── tests/
 │   ├── test_fetch_sources.py
@@ -27,19 +29,20 @@ news/
 
 なお、Redditは`old.reddit.com`のJSON APIが家庭用ISP経由でも`403 blocked by network security`で安定してブロックされることを確認したため、収集対象から除外している(代わりにLobstersを採用)。
 
-## 閲覧方法
+## 閲覧・興味記事の選択
 
-GitHub Pagesやカスタムのビューアは使わず、GitHubの標準ブラウザ表示(`https://github.com/<owner>/news/blob/main/digests/YYYY-MM-DD.md`)でそのまま読む。この程度の一覧表示にHTML化・専用サイト配信は過剰と判断した。
+毎朝、GitHub Issue(`digest`ラベル)としてダイジェストを投稿する。GitHubの通常のファイル表示(blobビュー)ではMarkdownのチェックボックスはクリックできず、Issue/PR本文でのみタップでトグルできるため、この形式にしている。スマホのGitHubアプリ/モバイルブラウザでIssueを開き、気になった記事のチェックボックスをタップする。
 
 ## 深掘り→アーカイブの規約
 
-Remote Control経由で記事の深掘りを依頼された場合、担当するClaudeセッションは以下に従うこと。
+Remote Control経由で「今日のIssueをチェックして」等の依頼を受けた場合、担当するClaudeセッションは以下に従うこと。
 
-1. 対象記事の`id`(`digests/YYYY-MM-DD.json`内、または会話で示されたURL)を特定する
-2. `archive/YYYY/MM/DD-<slug>.md`(その記事が`digests/`に登場した日付ディレクトリ、`<slug>`は`id`と同じ値)が既に存在するか確認する
+1. `scripts/gh.sh issue list --label digest --state open --json number,title` 等で対象のIssueを特定する(通常は最新のもの)
+2. `scripts/gh.sh issue view <number> --json body --jq .body` で本文を取得し、`scripts/render_digest.py`の`parse_checked_ids()`と同じルール(`- [x]`の直後に現れる`<!-- id:... -->`)でチェック済みの記事`id`を洗い出す
+3. 各`id`について、`archive/YYYY/MM/DD-<slug>.md`(その記事が`digests/`に登場した日付、`<slug>`は`id`と同じ値)が既に存在するか確認する
    - 存在すればその内容を提示するだけでよい(再度WebFetchして要約し直す必要はない)
    - 存在しなければ、記事URLをWebFetchし要約を作成する
-3. 新規作成する場合は以下のフォーマットで保存する
+4. 新規作成する場合は以下のフォーマットで保存する
 
    ```markdown
    # <記事タイトル>
@@ -53,7 +56,7 @@ Remote Control経由で記事の深掘りを依頼された場合、担当する
    <深掘り要約本文>
    ```
 
-4. `git add archive/ && git commit -m "archive: <記事タイトルの要約>" && git push` を実行する
+5. `git add archive/ && git commit -m "archive: <記事タイトルの要約>" && git push` を実行する
 
 ## 開発
 
