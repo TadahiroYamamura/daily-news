@@ -12,15 +12,20 @@ news/
 ├── PROFILE.md                    # 興味プロファイルの単一情報源(興味領域・★評価基準)
 ├── SOURCES.md                    # 収集ソース一覧(はてブ/HN/Reddit/セキュリティブログ)
 ├── scripts/
-│   ├── get_all_reddit.sh         # Reddit 13サブレディット一括取得
+│   ├── fetch_sources.py          # はてブ/HN/セキュリティブログを決定論的に取得(API/RSS)
+│   ├── get_all_reddit.sh         # Reddit 13サブレディット一括取得(API+jq、決定論的)
 │   └── render_digest.py          # digests/*.json → docs/*.html
 ├── digests/YYYY-MM-DD.json       # 収集結果(データソースそのもの)
 ├── docs/                         # GitHub Pages公開対象(ビルド成果物)
 ├── archive/YYYY/MM/DD-<slug>.md  # 深掘り要約のアーカイブ
-├── tests/test_render_digest.py
+├── tests/
+│   ├── test_fetch_sources.py
+│   └── test_render_digest.py
 ├── dev-docs/                     # 開発・運用ドキュメント
 └── README.md
 ```
+
+データ取得(はてブ/HN/セキュリティブログ/Reddit)はすべてAPI/RSSを構造化パースするスクリプトで行い、LLMによるページスクレイピング(WebFetch)には頼らない。実行のたびに抽出結果がブレるのを防ぐための設計判断。LLMが担うのは翻訳・興味度評価・深掘り要約のみ。
 
 ## 深掘り→アーカイブの規約
 

@@ -2,25 +2,22 @@
 
 `morning-digest`スキルが収集対象とする情報源の一覧。興味関心の中身は`PROFILE.md`を参照。
 
+`scripts/fetch_sources.py`が下記すべてを1回の実行で決定論的に取得する(API/RSSを構造化データとしてパースするため、実行のたびに抽出結果がブレない)。Reddit(13サブレディット)は別途`scripts/get_all_reddit.sh`で取得する。
+
 ## はてなブックマークIT(日本市場)
 
-- https://b.hatena.ne.jp/hotentry/it
-- https://b.hatena.ne.jp/hotentry/it/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0
-- https://b.hatena.ne.jp/hotentry/it/AI%E3%83%BB%E6%A9%9F%E6%A2%B0%E5%AD%A6%E7%BF%92
-- https://b.hatena.ne.jp/hotentry/it/%E3%81%AF%E3%81%A6%E3%81%AA%E3%83%96%E3%83%AD%E3%82%B0%EF%BC%88%E3%83%86%E3%82%AF%E3%83%8E%E3%83%AD%E3%82%B8%E3%83%BC%EF%BC%89
-- https://b.hatena.ne.jp/hotentry/it/%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3%E6%8A%80%E8%A1%93
-- https://b.hatena.ne.jp/hotentry/it/%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2
+- https://b.hatena.ne.jp/hotentry/it.rss(総合IT、30件)
+
+IT配下の詳細カテゴリ(プログラミング/AI・機械学習/セキュリティ技術/エンジニア等)には専用RSSが存在しないため、この総合フィードから`morning-digest`スキルの興味度評価ステップでカテゴリ・関連度を判定する。
 
 ## Hacker News(グローバル)
 
-- https://news.ycombinator.com/
+- https://hacker-news.firebaseio.com/v0/topstories.json 経由、上位30件(Firebase API)
 
-## セキュリティ(追加ソース)
+## セキュリティ(追加ソース、各最新3件)
 
-- https://www.aikido.dev/blog — セキュリティ研究開発者向けのセキュリティ情報
-- https://www.wiz.io/blog — クラウドセキュリティ
-
-最新1〜3記事をチェックし、興味度★★★のものがあれば注目トピックに含める。
+- https://www.aikido.dev/blog/rss.xml — セキュリティ研究開発者向けのセキュリティ情報
+- https://www.wiz.io/feed/rss.xml — クラウドセキュリティ
 
 ## Reddit(13サブレディット)
 

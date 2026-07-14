@@ -15,33 +15,30 @@ description: "毎朝のニュース収集とGitHub Pagesダイジェスト生成
 
 ### 1. トレンド情報の収集
 
-`SOURCES.md`に列挙された各URLをWebFetchツールで取得する。
+データ取得はLLMによるページ読解(WebFetch)に頼らず、構造化API/RSSを決定論的にパースするスクリプトで行う。実行のたびに抽出結果がブレるのを防ぐため、**この手順以外の方法(WebFetchでのスクレイピング等)でタイトル・URL・スコアを抽出してはならない**。
 
-**はてなブックマークIT**
-- 各エントリーの**タイトル、元記事URL、ブックマーク数**を必ず取得する
-- はてブのエントリーページURLではなく、リンク先の元記事URLを抽出する
-- 重複エントリーは削除する
+**はてなブックマークIT・Hacker News・セキュリティブログ**
+- `scripts/fetch_sources.py` を**1回だけ**実行し、標準出力のJSON配列を取得する(`source` / `id` / `title` / `url` / `score_label` 等が構造化済み)
 
-**Hacker News**
-- 各記事の**タイトル、HNコメントページURL(`https://news.ycombinator.com/item?id=XXXXX`形式)、ポイント数**を取得する
-- 元記事URLではなくHNのコメントページURLを使用する(コメントも確認できるようにするため)
-- タイトルは日本語に翻訳する
-
-**セキュリティ(追加ソース)**
-- 最新1〜3記事をチェックし、興味度★★★のものがあれば含める
+```bash
+python3 scripts/fetch_sources.py
+```
 
 **Reddit**
 - `scripts/get_all_reddit.sh` を**1回だけ**実行して全13サブレディットのデータを取得する(Bash承認プロンプトの摩擦を避けるため一括スクリプト化されている)
 - 各記事の**タイトル、Redditコメントページの完全URL、投票数(ups)、コメント数**を取得する
-- 英語のタイトルは日本語に翻訳する
 
 ```bash
 bash scripts/get_all_reddit.sh
 ```
 
-### 2. 分析・興味度評価
+両スクリプトの出力をあわせたものが収集結果の全体になる。この時点でタイトル・URL・スコアはすべて確定しており、LLMが行うのは以降の翻訳と評価のみである。
 
-`PROFILE.md`の「興味度★評価基準」に従い、各記事を★1〜3で評価する。興味領域とのマッチングを最優先の観点とする。
+### 2. 翻訳・分析・興味度評価
+
+- 英語のタイトル(Hacker News・Redditの一部・セキュリティブログ)は日本語に翻訳する
+- `PROFILE.md`の「興味度★評価基準」に従い、各記事を★1〜3で評価する。興味領域とのマッチングを最優先の観点とする
+- `id`は`fetch_sources.py`や`get_all_reddit.sh`の出力に既に含まれている値をそのまま使う。**LLMが新たにIDを考案・計算してはならない**(ハッシュの手計算は毎回結果がブレるため、決定論性が崩れる)
 
 ### 3. JSON書き出し
 
@@ -52,7 +49,7 @@ bash scripts/get_all_reddit.sh
   "date": "YYYY-MM-DD",
   "articles": [
     {
-      "id": "hatena-abc123",
+      "id": "hatena_it-a1b2c3d4",
       "source": "hatena_it",
       "title": "記事タイトル",
       "url": "https://example.com/article",
@@ -65,9 +62,8 @@ bash scripts/get_all_reddit.sh
 }
 ```
 
-- `id`: ソース名+URLベースのスラッグなど、安定した識別子(後の深掘り時にアーカイブファイル名として再利用する)
-- `source`: `hatena_it` / `hacker_news` / `reddit_<subreddit>` / `security_blog` のいずれか
-- `score_label`: はてブなら`XXX users`、HNなら`XXXpt`、Redditなら`XXX ups`
+- `id`・`source`・`url`・`score_label`は`fetch_sources.py`/`get_all_reddit.sh`の出力をそのまま転記する(`id`はアーカイブファイル名にも再利用する)
+- `interest_level`・`category`・`note`はこのステップでLLMが付与する
 
 詳細なスキーマは `dev-docs/digest-schema.md` を参照。
 
@@ -91,13 +87,9 @@ git push
 
 ## 注意事項
 
-- WebFetchツールを使用して情報を取得する
+- データ取得は`scripts/fetch_sources.py`と`scripts/get_all_reddit.sh`のみを用いる。WebFetchでのページスクレイピングによる代替は行わない(決定論性が崩れるため)
 - すべての記事にURLリンクを必ず含める(リンクなしは不可)
-- はてブは元記事のURLを必ず取得する(はてブページURLではなく)
-- Hacker NewsはHNコメントページURL(`item?id=`形式)を使用する(元記事URLではなく)
 - 英語のタイトルは日本語に翻訳する
-- RedditはRedditコメントページの完全URL(`https://www.reddit.com/r/subreddit/comments/...`形式)を使用する
-- Reddit APIレート制限に注意(1分あたり60リクエスト程度)
 - 投票数(ups)/コメント数/ポイント数が高い記事を優先する
 - `digests/YYYY-MM-DD.json`のYYYY-MM-DDは実行日の日付を使用する
 - 完了したら「ダイジェスト収集完了。」と一言メッセージを返す(Remote Control経由で確認しているユーザーに伝わるようにする)
