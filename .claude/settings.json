@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 scripts/fetch_sources.py)",
+      "Bash(python3 scripts/render_digest.py)",
+      "Bash(git add digests/*)",
+      "Bash(git add archive/*)",
+      "Bash(git commit -m *)",
+      "Bash(git log --oneline)",
+      "Bash(git status)",
+      "Bash(git show)"
+    ],
+    "ask": [
+      "Bash(git push *)"
+    ]
+  }
+}
