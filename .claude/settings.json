@@ -13,7 +13,8 @@
       "Bash(scripts/gh.sh issue list *)",
       "Bash(scripts/gh.sh issue view *)",
       "Bash(scripts/gh.sh issue comment *)",
-      "Bash(python3 scripts/archive_index.py *)"
+      "Bash(python3 scripts/archive_index.py *)",
+      "Bash(python3 scripts/validate_digest.py)"
     ],
     "ask": [
       "Bash(git push *)"

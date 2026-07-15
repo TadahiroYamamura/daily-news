@@ -3,7 +3,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 
-from validate_digest import validate_digest
+from validate_digest import build, validate_digest
 
 
 def _valid_article(**overrides):
@@ -95,3 +95,27 @@ def test_validate_digest_allows_empty_score_label_for_sources_without_counts():
     }
 
     assert validate_digest(digest) == []
+
+
+def _write_digest(path, date, articles):
+    import json
+
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps({"date": date, "articles": articles}), encoding="utf-8")
+
+
+def test_build_validates_the_file_for_the_given_date(tmp_path):
+    _write_digest(tmp_path / "2026-07-14.json", "2026-07-14", [_valid_article(url="")])
+
+    errors = build("2026-07-14", digests_dir=tmp_path)
+
+    assert any("url" in e for e in errors)
+
+
+def test_build_defaults_to_the_most_recent_digest_file_when_date_omitted(tmp_path):
+    _write_digest(tmp_path / "2026-07-14.json", "2026-07-14", [_valid_article()])
+    _write_digest(tmp_path / "2026-07-15.json", "2026-07-15", [_valid_article(url="")])
+
+    errors = build(digests_dir=tmp_path)
+
+    assert any("url" in e for e in errors)

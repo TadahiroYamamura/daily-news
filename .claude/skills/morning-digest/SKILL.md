@@ -60,10 +60,10 @@ Hacker News・Lobsters・はてなブックマークIT・Zenn・Qiita・セキ�
 
 ### 3.5 スキーマ検証
 
-commitする前に`scripts/validate_digest.py`で必須フィールド漏れ・id重複・配信フィルタ基準(`interest_level >= 2`)違反がないか機械的に検証する。
+commitする前に`scripts/validate_digest.py`で必須フィールド漏れ・id重複・配信フィルタ基準(`interest_level >= 2`)違反がないか機械的に検証する。引数無しで実行すると`digests/`内の最新ファイル(=今書き出したファイル)を自動検証する。
 
 ```bash
-python3 scripts/validate_digest.py YYYY-MM-DD
+python3 scripts/validate_digest.py
 ```
 
 エラーが出力された場合はJSONを修正してから再実行する。この検証は形式面のみを見るもので、★評価の妥当性そのもの(何が★3に値するか)はLLMの判断領域であり検証対象外。

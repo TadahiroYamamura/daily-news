@@ -76,15 +76,30 @@ def validate_digest(digest):
     return errors
 
 
-def build(date, digests_dir=DIGESTS_DIR):
-    digest_path = digests_dir / f"{date}.json"
+def _resolve_digest_path(date, digests_dir):
+    if date:
+        return digests_dir / f"{date}.json"
+
+    files = sorted(digests_dir.glob("*.json"))
+    if not files:
+        raise FileNotFoundError(f"{digests_dir} にdigestファイルがありません")
+    return files[-1]
+
+
+def build(date=None, digests_dir=DIGESTS_DIR):
+    digest_path = _resolve_digest_path(date, digests_dir)
     digest = json.loads(digest_path.read_text(encoding="utf-8"))
     return validate_digest(digest)
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("date", help="対象日付(YYYY-MM-DD)。digests/<date>.jsonを検証する")
+    parser.add_argument(
+        "date",
+        nargs="?",
+        default=None,
+        help="対象日付(YYYY-MM-DD)。省略時はdigests/内の最新ファイルを検証する",
+    )
     args = parser.parse_args()
 
     errors = build(args.date)
@@ -93,4 +108,5 @@ if __name__ == "__main__":
             print(error, file=sys.stderr)
         sys.exit(1)
 
-    print(f"digests/{args.date}.json は妥当です")
+    validated_path = _resolve_digest_path(args.date, DIGESTS_DIR)
+    print(f"{validated_path.relative_to(REPO_ROOT)} は妥当です")
