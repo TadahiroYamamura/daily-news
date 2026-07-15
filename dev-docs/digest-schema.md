@@ -42,3 +42,4 @@
 ## 契約上の注意
 
 - `scripts/render_digest.py`はこのファイルの内容をそのままGitHub Issue本文(チェックボックス付き、末尾に`<!-- id:... -->`で`id`を埋め込む)に変換する。フィールド名を変更する場合は`render_digest.py`と`tests/test_render_digest.py`を同一コミットで更新すること
+- `scripts/validate_digest.py`はcommit前に必須フィールド漏れ・id重複・配信フィルタ基準(`interest_level >= 2`)違反を検証する。フィールド名や必須/任意の区分を変更する場合は`validate_digest.py`と`tests/test_validate_digest.py`も同一コミットで更新すること

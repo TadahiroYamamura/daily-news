@@ -33,7 +33,7 @@ Hacker News・Lobsters・はてなブックマークIT・Zenn・Qiita・セキ�
 
 ### 3. JSON書き出し
 
-`dev-docs/digest-schema.md`の「配信フィルタ基準」に従い、`interest_level >= 2`(★★以上)の記事のみを抽出し、`digests/YYYY-MM-DD.json`(実行日の日付)に以下の形式で書き出す。
+`dev-docs/digest-schema.md`の「配信フィルタ基準」に従い、`interest_level >= 2`(★★以上)の記事のみを抽出し、`digests/YYYY-MM-DD.json`(実行日の日付)に以下の形式で書き出す。**中間ファイルやマージ用スクリプト(`python3 -c`等)を経由せず、Writeツールで最終形をそのまま1回で書き出す。** `fetch_sources.py`の出力は手順1の実行時点で会話コンテキスト上にあるため、そこから`id`・`source`・`url`・`score_label`を転記しつつ、`interest_level`・`category`・`note`(・英語記事の翻訳後`title`)をこのステップで直接付与すればよく、突き合わせのための別ファイルは不要。
 
 ```json
 {
@@ -58,6 +58,16 @@ Hacker News・Lobsters・はてなブックマークIT・Zenn・Qiita・セキ�
 
 詳細なスキーマは `dev-docs/digest-schema.md` を参照。
 
+### 3.5 スキーマ検証
+
+commitする前に`scripts/validate_digest.py`で必須フィールド漏れ・id重複・配信フィルタ基準(`interest_level >= 2`)違反がないか機械的に検証する。
+
+```bash
+python3 scripts/validate_digest.py YYYY-MM-DD
+```
+
+エラーが出力された場合はJSONを修正してから再実行する。この検証は形式面のみを見るもので、★評価の妥当性そのもの(何が★3に値するか)はLLMの判断領域であり検証対象外。
+
 ### 4. commit + push
 
 ```bash
@@ -81,6 +91,7 @@ scripts/post_digest_issue.sh YYYY-MM-DD
 ## 注意事項
 
 - データ取得は`scripts/fetch_sources.py`のみを用いる。WebFetchでのページスクレイピングによる代替は行わない(決定論性が崩れるため)
+- `digests/YYYY-MM-DD.json`はWriteツールで直接書き出す。`python3 -c`等でのJSON組み立て・マージは行わない(承認プロンプトの増加要因になる上、判断を伴わない転記作業に外部プロセスは不要)
 - Issue投稿は`scripts/post_digest_issue.sh`のみを用いる。深掘り時の`gh issue list`/`gh issue view`など読み取り系は`scripts/gh.sh`経由で行う
 - すべての記事にURLリンクを必ず含める(リンクなしは不可)
 - 英語のタイトルは日本語に翻訳する
