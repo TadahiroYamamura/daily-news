@@ -164,7 +164,7 @@
     {
       "id": "lobsters-ad295f11",
       "source": "lobsters",
-      "title": "Too many words about DIDs",
+      "title": "DID(分散型識別子)についての長い解説",
       "url": "https://lobste.rs/s/86lwsv/too_many_words_about_dids",
       "score_label": "22pt",
       "interest_level": 2,
@@ -174,7 +174,7 @@
     {
       "id": "lobsters-67295917",
       "source": "lobsters",
-      "title": "whatcable: macOS menu bar app that tells you, in plain English, what each USB-C cable plugged into your Mac can actually do",
+      "title": "whatcable：挿したUSB-Cケーブルが何をできるか教えてくれるmacOSメニューバーアプリ",
       "url": "https://lobste.rs/s/tzzarv/whatcable_macos_menu_bar_app_tells_you",
       "score_label": "28pt",
       "interest_level": 2,
@@ -184,7 +184,7 @@
     {
       "id": "lobsters-dca51d00",
       "source": "lobsters",
-      "title": "You should probably check on your smart appliances",
+      "title": "スマート家電を一度チェックした方がいい",
       "url": "https://lobste.rs/s/slrak5/you_should_probably_check_on_your_smart",
       "score_label": "8pt",
       "interest_level": 2,
@@ -194,7 +194,7 @@
     {
       "id": "lobsters-771acc46",
       "source": "lobsters",
-      "title": "6× faster binary search: from compiled code to mechanical sympathy",
+      "title": "6倍高速な二分探索：コンパイル結果からメカニカルシンパシーへ",
       "url": "https://lobste.rs/s/czbhmr/6x_faster_binary_search_from_compiled",
       "score_label": "19pt",
       "interest_level": 2,
@@ -204,7 +204,7 @@
     {
       "id": "lobsters-a71e9839",
       "source": "lobsters",
-      "title": "Job queues are deceptively tricky",
+      "title": "ジョブキューは見た目以上に厄介",
       "url": "https://lobste.rs/s/k3frwc/job_queues_are_deceptively_tricky",
       "score_label": "19pt",
       "interest_level": 2,
@@ -214,7 +214,7 @@
     {
       "id": "lobsters-b117c574",
       "source": "lobsters",
-      "title": "lobste.rs is now running on SQLite",
+      "title": "lobste.rsがSQLiteで動くようになった",
       "url": "https://lobste.rs/s/ko1ji1/lobste_rs_is_now_running_on_sqlite",
       "score_label": "384pt",
       "interest_level": 2,
@@ -224,7 +224,7 @@
     {
       "id": "lobsters-56f48235",
       "source": "lobsters",
-      "title": "git-absorb: git commit --fixup, but automatic",
+      "title": "git-absorb：自動化されたgit commit --fixup",
       "url": "https://lobste.rs/s/nprldj/git_absorb_git_commit_fixup_automatic",
       "score_label": "30pt",
       "interest_level": 2,
@@ -234,7 +234,7 @@
     {
       "id": "lobsters-7aa23c49",
       "source": "lobsters",
-      "title": "The git history command deserves more attention",
+      "title": "git historyコマンドはもっと評価されるべき",
       "url": "https://lobste.rs/s/tb3el5/git_history_command_deserves_more",
       "score_label": "63pt",
       "interest_level": 2,
@@ -244,7 +244,7 @@
     {
       "id": "lobsters-73ffe618",
       "source": "lobsters",
-      "title": "Hating AI in 2026",
+      "title": "2026年、AIを嫌うということ",
       "url": "https://lobste.rs/s/el8ocy/hating_ai_2026",
       "score_label": "42pt",
       "interest_level": 3,
@@ -254,7 +254,7 @@
     {
       "id": "lobsters-1a3a9203",
       "source": "lobsters",
-      "title": "Quadrupling code performance with a \"useless\" if",
+      "title": "『無駄な』ifでコード性能を4倍にする",
       "url": "https://lobste.rs/s/1an425/quadrupling_code_performance_with",
       "score_label": "123pt",
       "interest_level": 2,
@@ -264,7 +264,7 @@
     {
       "id": "lobsters-d7e79865",
       "source": "lobsters",
-      "title": "Beautiful Type Erasure with C++26 Reflection",
+      "title": "C++26リフレクションによる美しい型消去",
       "url": "https://lobste.rs/s/6f2tzk/beautiful_type_erasure_with_c_26",
       "score_label": "7pt",
       "interest_level": 2,
@@ -274,7 +274,7 @@
     {
       "id": "lobsters-b3290556",
       "source": "lobsters",
-      "title": "A Hypervisor(-less) Denuvo bypass for Linux",
+      "title": "Linux向けHypervisor(レス)のDenuvoバイパス",
       "url": "https://lobste.rs/s/k3xjvf/hypervisor_less_denuvo_bypass_for_linux",
       "score_label": "5pt",
       "interest_level": 2,
@@ -484,7 +484,7 @@
     {
       "id": "hatena_it-240d5f68",
       "source": "hatena_it",
-      "title": "Snapzy | Beautiful Screen Capture for macOS",
+      "title": "Snapzy｜macOS向けの美しいスクリーンキャプチャ",
       "url": "https://snapzy.app/",
       "score_label": "61 users",
       "interest_level": 2,
