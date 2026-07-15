@@ -1,0 +1,1115 @@
+{
+  "date": "2026-07-16",
+  "articles": [
+    {
+      "id": "hacker_news-220dccbe",
+      "source": "hacker_news",
+      "title": "Inkling: 我々のオープンウェイトモデル",
+      "url": "https://news.ycombinator.com/item?id=48924912",
+      "score_label": "303pt",
+      "interest_level": 3,
+      "category": "AI",
+      "note": "新しいオープンウェイトAIモデルのリリース"
+    },
+    {
+      "id": "hacker_news-04776305",
+      "source": "hacker_news",
+      "title": "13年前のXeonでGPUなしGemma 4 26Bを5トークン/秒で動かす",
+      "url": "https://news.ycombinator.com/item?id=48922434",
+      "score_label": "179pt",
+      "interest_level": 3,
+      "category": "AI",
+      "note": "ローカルLLM実行の実践例"
+    },
+    {
+      "id": "hacker_news-f8a4ccb3",
+      "source": "hacker_news",
+      "title": "Show HN: misa77 ― LZ4より2倍速くデコードできるコーデック",
+      "url": "https://news.ycombinator.com/item?id=48922838",
+      "score_label": "101pt",
+      "interest_level": 2,
+      "category": "OSS",
+      "note": "個人開発によるOSSコーデックプロジェクト"
+    },
+    {
+      "id": "hacker_news-a84e2d0a",
+      "source": "hacker_news",
+      "title": "Telegramデータセンターの謎（2022）",
+      "url": "https://news.ycombinator.com/item?id=48920475",
+      "score_label": "207pt",
+      "interest_level": 2,
+      "category": "Infra",
+      "note": "大規模インフラの技術トレンド"
+    },
+    {
+      "id": "hacker_news-023b57fc",
+      "source": "hacker_news",
+      "title": "Brainless: Claude Code・Codex・Grok風のUIに見えるShadcnコンポーネント集",
+      "url": "https://news.ycombinator.com/item?id=48926085",
+      "score_label": "11pt",
+      "interest_level": 3,
+      "category": "JS/TS",
+      "note": "AIコーディングツール風UIのShadcnコンポーネント、JS/TSスタックとAIツール双方に関連"
+    },
+    {
+      "id": "hacker_news-a4a27027",
+      "source": "hacker_news",
+      "title": "メンタルヘルスを優先すべき理由、コミュニケーションが重要な理由",
+      "url": "https://news.ycombinator.com/item?id=48919198",
+      "score_label": "245pt",
+      "interest_level": 2,
+      "category": "Career",
+      "note": "キャリア/人生哲学に緩やかに関連するライフアドバイス"
+    },
+    {
+      "id": "hacker_news-c3b46774",
+      "source": "hacker_news",
+      "title": "何でもできるハーネスを目指して",
+      "url": "https://news.ycombinator.com/item?id=48921077",
+      "score_label": "135pt",
+      "interest_level": 3,
+      "category": "AI",
+      "note": "AIエージェントハーネスの設計論"
+    },
+    {
+      "id": "hacker_news-76043369",
+      "source": "hacker_news",
+      "title": "エージェント向けAPIの設計",
+      "url": "https://news.ycombinator.com/item?id=48894874",
+      "score_label": "7pt",
+      "interest_level": 3,
+      "category": "AI",
+      "note": "AIエージェント向けAPI設計論"
+    },
+    {
+      "id": "hacker_news-53334bf7",
+      "source": "hacker_news",
+      "title": "Launch HN: Coasty（YC S26）― コンピュータ操作エージェント向けAPI",
+      "url": "https://news.ycombinator.com/item?id=48922706",
+      "score_label": "26pt",
+      "interest_level": 3,
+      "category": "AI",
+      "note": "AIエージェント×個人開発（YCスタートアップのローンチ）"
+    },
+    {
+      "id": "hacker_news-621c6197",
+      "source": "hacker_news",
+      "title": "SSH経由で同期するコーディングエージェント向けOSSメモリ",
+      "url": "https://news.ycombinator.com/item?id=48923111",
+      "score_label": "82pt",
+      "interest_level": 3,
+      "category": "AI",
+      "note": "AIコーディングエージェント向けOSSツール"
+    },
+    {
+      "id": "hacker_news-3cec005d",
+      "source": "hacker_news",
+      "title": "Show HN: Capn-hook ― コーディングエージェントが同じ謎を二度grepしないためのツール",
+      "url": "https://news.ycombinator.com/item?id=48884903",
+      "score_label": "15pt",
+      "interest_level": 3,
+      "category": "AI",
+      "note": "AIコーディングエージェント向けOSSツール"
+    },
+    {
+      "id": "hacker_news-2a04baad",
+      "source": "hacker_news",
+      "title": "The Memory Heist（記憶の窃盗）",
+      "url": "https://news.ycombinator.com/item?id=48912013",
+      "score_label": "71pt",
+      "interest_level": 2,
+      "category": "Tech",
+      "note": "HN・Lobsters双方で話題になっている技術エッセイ"
+    },
+    {
+      "id": "hacker_news-fbbe51b6",
+      "source": "hacker_news",
+      "title": "Codex Micro",
+      "url": "https://news.ycombinator.com/item?id=48923079",
+      "score_label": "221pt",
+      "interest_level": 3,
+      "category": "AI",
+      "note": "OpenAIのAIコーディングモデル新版"
+    },
+    {
+      "id": "hacker_news-839416ab",
+      "source": "hacker_news",
+      "title": "セキュアメッセージングアプリBriarがメンテナンスモードに",
+      "url": "https://news.ycombinator.com/item?id=48919869",
+      "score_label": "125pt",
+      "interest_level": 2,
+      "category": "OSS",
+      "note": "OSSプロジェクトの動向"
+    },
+    {
+      "id": "hacker_news-6576b467",
+      "source": "hacker_news",
+      "title": "OpenAIがEU裁判所で商標訴訟に敗訴",
+      "url": "https://news.ycombinator.com/item?id=48921461",
+      "score_label": "192pt",
+      "interest_level": 2,
+      "category": "AI",
+      "note": "AI業界の法的動向"
+    },
+    {
+      "id": "hacker_news-fdec89be",
+      "source": "hacker_news",
+      "title": "MLOpsにおける未解決問題",
+      "url": "https://news.ycombinator.com/item?id=48923109",
+      "score_label": "34pt",
+      "interest_level": 3,
+      "category": "AI",
+      "note": "AI運用（MLOps）の課題整理"
+    },
+    {
+      "id": "hacker_news-cebec806",
+      "source": "hacker_news",
+      "title": "AIが家族の一員になるとき",
+      "url": "https://news.ycombinator.com/item?id=48922487",
+      "score_label": "54pt",
+      "interest_level": 2,
+      "category": "AI",
+      "note": "AIと社会・人間関係についての考察"
+    },
+    {
+      "id": "hacker_news-fc4209cf",
+      "source": "hacker_news",
+      "title": "Telegram Serverless",
+      "url": "https://news.ycombinator.com/item?id=48918534",
+      "score_label": "159pt",
+      "interest_level": 2,
+      "category": "Infra",
+      "note": "大規模サービスのサーバーレス化事例"
+    },
+    {
+      "id": "hacker_news-1b71e3ca",
+      "source": "hacker_news",
+      "title": "汎用ゴール条件付きMinecraftモデル",
+      "url": "https://news.ycombinator.com/item?id=48923412",
+      "score_label": "33pt",
+      "interest_level": 3,
+      "category": "AI",
+      "note": "ゲーム環境での目標達成AIエージェント研究"
+    },
+    {
+      "id": "hacker_news-1051afaf",
+      "source": "hacker_news",
+      "title": "3秒の窃盗：AI音声詐欺があらゆる防御を上回る理由",
+      "url": "https://news.ycombinator.com/item?id=48920432",
+      "score_label": "149pt",
+      "interest_level": 3,
+      "category": "Security",
+      "note": "AI悪用によるセキュリティ脅威（音声詐欺）"
+    },
+    {
+      "id": "hacker_news-90234b22",
+      "source": "hacker_news",
+      "title": "40テラバイトの公開データをビデオゲームに変えた保存活動家",
+      "url": "https://news.ycombinator.com/item?id=48906893",
+      "score_label": "86pt",
+      "interest_level": 2,
+      "category": "個人開発",
+      "note": "個人によるデータ保存・活用プロジェクト"
+    },
+    {
+      "id": "lobsters-197684d9",
+      "source": "lobsters",
+      "title": "SQLiteにも（Rustのような）エディション制度があるべき",
+      "url": "https://lobste.rs/s/2nry82/sqlite_should_have_rust_style_editions",
+      "score_label": "22pt",
+      "interest_level": 2,
+      "category": "OSS",
+      "note": "OSSプロジェクトの互換性運用に関する議論"
+    },
+    {
+      "id": "lobsters-dca51d00",
+      "source": "lobsters",
+      "title": "スマート家電を一度確認しておいたほうがいい",
+      "url": "https://lobste.rs/s/slrak5/you_should_probably_check_on_your_smart",
+      "score_label": "73pt",
+      "interest_level": 2,
+      "category": "Security",
+      "note": "IoTセキュリティ/プライバシーへの注意喚起"
+    },
+    {
+      "id": "lobsters-8e0f2009",
+      "source": "lobsters",
+      "title": "FreeBSD 16がベースシステムから最後のGPLコードを撤廃",
+      "url": "https://lobste.rs/s/n1cwdh/freebsd_16_retires_last_its_gpl_code_from",
+      "score_label": "36pt",
+      "interest_level": 2,
+      "category": "OSS",
+      "note": "OSSライセンス動向"
+    },
+    {
+      "id": "lobsters-3d283cba",
+      "source": "lobsters",
+      "title": "nullポインタについて考えていること",
+      "url": "https://lobste.rs/s/tnlxmc/i_ve_been_thinking_about_null_pointers",
+      "score_label": "18pt",
+      "interest_level": 2,
+      "category": "Tech",
+      "note": "プログラミング言語設計に関する技術エッセイ"
+    },
+    {
+      "id": "lobsters-75a5b602",
+      "source": "lobsters",
+      "title": "C文字列：50年間の過ち",
+      "url": "https://lobste.rs/s/upgpyq/c_strings_50_year_mistake",
+      "score_label": "34pt",
+      "interest_level": 2,
+      "category": "Tech",
+      "note": "プログラミング言語設計批評"
+    },
+    {
+      "id": "lobsters-b61ae5ea",
+      "source": "lobsters",
+      "title": "K&R Cについて知らなかったあれこれ",
+      "url": "https://lobste.rs/s/qrtxzl/bunch_stuff_i_used_not_know_about_k_r_c",
+      "score_label": "21pt",
+      "interest_level": 2,
+      "category": "Tech",
+      "note": "C言語の技術知識"
+    },
+    {
+      "id": "lobsters-bd7c6e67",
+      "source": "lobsters",
+      "title": "C++20がfor文の構文をどう改善したか",
+      "url": "https://lobste.rs/s/knrrsr/how_c_20_improved_for_loop_syntax",
+      "score_label": "22pt",
+      "interest_level": 2,
+      "category": "Tech",
+      "note": "言語仕様の技術解説"
+    },
+    {
+      "id": "lobsters-601a93f6",
+      "source": "lobsters",
+      "title": "Microsoftが無効化不可能なWindowsデバイス識別子GDIDを確認、FBI提出書類にも記載",
+      "url": "https://lobste.rs/s/agkcmz/microsoft_confirms_windows_gdid_device",
+      "score_label": "11pt",
+      "interest_level": 3,
+      "category": "Security",
+      "note": "プライバシー/監視技術に関わるセキュリティ問題"
+    },
+    {
+      "id": "lobsters-c20bebf0",
+      "source": "lobsters",
+      "title": "ELIZAの発明 ― 最初のチャットボットがAIの未来をどう形作ったか",
+      "url": "https://lobste.rs/s/hquwey/inventing_eliza_how_first_chatbot_shaped",
+      "score_label": "8pt",
+      "interest_level": 2,
+      "category": "AI",
+      "note": "AI/チャットボットの歴史的考察"
+    },
+    {
+      "id": "lobsters-7cd1110c",
+      "source": "lobsters",
+      "title": "ObeliskとTemporal、Restateの比較",
+      "url": "https://lobste.rs/s/h1r6gc/comparing_obelisk_with_temporal_restate",
+      "score_label": "4pt",
+      "interest_level": 2,
+      "category": "Infra",
+      "note": "ワークフローエンジンの比較、バックエンド技術トレンド"
+    },
+    {
+      "id": "lobsters-f1e06ade",
+      "source": "lobsters",
+      "title": "qr-swastika-avoider v0.1.0",
+      "url": "https://lobste.rs/s/h7pett/qr_swastika_avoider_v0_1_0",
+      "score_label": "38pt",
+      "interest_level": 2,
+      "category": "個人開発",
+      "note": "QRコード生成時の意図しないパターンを回避するOSSツール"
+    },
+    {
+      "id": "lobsters-4aae9972",
+      "source": "lobsters",
+      "title": "あなたのAIはツールではない",
+      "url": "https://lobste.rs/s/6vsam1/your_ai_is_not_tool",
+      "score_label": "9pt",
+      "interest_level": 2,
+      "category": "AI",
+      "note": "AIとの関わり方についての考察"
+    },
+    {
+      "id": "lobsters-bd262982",
+      "source": "lobsters",
+      "title": "Over the Edge 2.0：Microsoftのデザイン戦術は今もブラウザ選択の自由を損ねている",
+      "url": "https://lobste.rs/s/6vevse/over_edge_2_0_microsoft_s_design_tactics",
+      "score_label": "18pt",
+      "interest_level": 2,
+      "category": "Tech",
+      "note": "ブラウザ市場・プラットフォーム設計の議論"
+    },
+    {
+      "id": "lobsters-26856064",
+      "source": "lobsters",
+      "title": "ソフトウェアがユーザーを軽視していれば、共感も喜びも意味を持たない",
+      "url": "https://lobste.rs/s/s4qbwh/empathy_delight_mean_nothing_when",
+      "score_label": "16pt",
+      "interest_level": 2,
+      "category": "Tech",
+      "note": "ソフトウェア開発文化に関する考察"
+    },
+    {
+      "id": "lobsters-21ec48f3",
+      "source": "lobsters",
+      "title": "Low Resource Computing 2026",
+      "url": "https://lobste.rs/s/hkgxnm/low_resource_computing_2026",
+      "score_label": "30pt",
+      "interest_level": 2,
+      "category": "Tech",
+      "note": "低リソース環境向けコンピューティングのトレンド"
+    },
+    {
+      "id": "lobsters-67295917",
+      "source": "lobsters",
+      "title": "whatcable：接続したUSB-Cケーブルが何をできるか教えてくれるmacOSメニューバーアプリ",
+      "url": "https://lobste.rs/s/tzzarv/whatcable_macos_menu_bar_app_tells_you",
+      "score_label": "63pt",
+      "interest_level": 2,
+      "category": "個人開発",
+      "note": "個人開発の小規模ツール"
+    },
+    {
+      "id": "lobsters-35933560",
+      "source": "lobsters",
+      "title": "テック企業の職場を労働組合化する方法",
+      "url": "https://lobste.rs/s/50s8qx/how_unionize_your_tech_workplace",
+      "score_label": "7pt",
+      "interest_level": 2,
+      "category": "Career",
+      "note": "エンジニアの労働環境/キャリアに関する話題"
+    },
+    {
+      "id": "lobsters-6f8e9001",
+      "source": "lobsters",
+      "title": "The Memory Heist（記憶の窃盗）",
+      "url": "https://lobste.rs/s/lelroo/memory_heist",
+      "score_label": "39pt",
+      "interest_level": 2,
+      "category": "Tech",
+      "note": "HN・Lobsters双方で話題になっている技術エッセイ"
+    },
+    {
+      "id": "lobsters-ad295f11",
+      "source": "lobsters",
+      "title": "DID（分散型識別子）について語りすぎた",
+      "url": "https://lobste.rs/s/86lwsv/too_many_words_about_dids",
+      "score_label": "43pt",
+      "interest_level": 2,
+      "category": "Tech",
+      "note": "分散型アイデンティティ技術の解説"
+    },
+    {
+      "id": "lobsters-0c5ba151",
+      "source": "lobsters",
+      "title": "完全開示：AIコーディングツールCursorにおける任意コード実行脆弱性",
+      "url": "https://lobste.rs/s/vlr279/full_disclosure_arbitrary_code",
+      "score_label": "16pt",
+      "interest_level": 3,
+      "category": "Security",
+      "note": "AIコーディングツールの脆弱性、Webセキュリティに直結"
+    },
+    {
+      "id": "lobsters-8268827f",
+      "source": "lobsters",
+      "title": "敵対的自己対戦でコーディングエージェントの粗悪な出力を減らす",
+      "url": "https://lobste.rs/s/k5ibd3/killing_coding_agent_slop_with",
+      "score_label": "1pt",
+      "interest_level": 3,
+      "category": "AI",
+      "note": "AIコーディングエージェントの品質向上手法"
+    },
+    {
+      "id": "lobsters-255a309a",
+      "source": "lobsters",
+      "title": "HTMXをGoでどう使っているか",
+      "url": "https://lobste.rs/s/rg1wee/how_i_use_htmx_with_go",
+      "score_label": "46pt",
+      "interest_level": 2,
+      "category": "Tech",
+      "note": "Web開発の実践Tips"
+    },
+    {
+      "id": "lobsters-45c28093",
+      "source": "lobsters",
+      "title": "『ジュラシック・パーク』に登場するコンピュータを徹底解説",
+      "url": "https://lobste.rs/s/xv8dix/jurassic_park_computers_excruciating",
+      "score_label": "100pt",
+      "interest_level": 2,
+      "category": "Tech",
+      "note": "エンジニアリング文化・レトロ技術の考察"
+    },
+    {
+      "id": "lobsters-df8bc345",
+      "source": "lobsters",
+      "title": "@clickhouse/rowbinary：ライブラリがパーサーコンパイラも兼ねるとき",
+      "url": "https://lobste.rs/s/fxtvgm/clickhouse_rowbinary_when_your_library",
+      "score_label": "4pt",
+      "interest_level": 2,
+      "category": "OSS",
+      "note": "OSSライブラリ設計の技術記事"
+    },
+    {
+      "id": "hatena_it-5cee82e4",
+      "source": "hatena_it",
+      "title": "ローカル LLM を構築した",
+      "url": "https://zenn.dev/neet/articles/11bafab8645995",
+      "score_label": "98 users",
+      "interest_level": 3,
+      "category": "AI",
+      "note": "個人開発でのローカルLLM構築"
+    },
+    {
+      "id": "hatena_it-a7a90036",
+      "source": "hatena_it",
+      "title": "【Claude Code】鹿野さんに聞く 私の推しの並行開発環境 大公開 / claude-code-parallel-2026-07-15",
+      "url": "https://speakerdeck.com/tonkotsuboy_com/claude-code-parallel-2026-07-15",
+      "score_label": "77 users",
+      "interest_level": 3,
+      "category": "AI",
+      "note": "Claude Codeを使った並行開発環境の実践"
+    },
+    {
+      "id": "hatena_it-5b3115e1",
+      "source": "hatena_it",
+      "title": "ニチレイ サイバー攻撃を公表 外食企業や食品メーカーに影響 | NHKニュース",
+      "url": "https://news.web.nhk/newsweb/na/na-k10015177751000",
+      "score_label": "97 users",
+      "interest_level": 3,
+      "category": "Security",
+      "note": "実際のサイバー攻撃インシデント、サプライチェーンへの影響"
+    },
+    {
+      "id": "hatena_it-8f1ffbf1",
+      "source": "hatena_it",
+      "title": "FIREしたけど、暇すぎるからタイミーとかUberでちょこちょこ働いてる。 生活..",
+      "url": "https://anond.hatelabo.jp/20260715192124",
+      "score_label": "28 users",
+      "interest_level": 3,
+      "category": "Career",
+      "note": "経済的自由（FIRE）後のキャリア/生活に関する実体験"
+    },
+    {
+      "id": "hatena_it-eec8e4dc",
+      "source": "hatena_it",
+      "title": "多層防御 vs 最先端のサプライチェーン攻撃 ―― freee の大規模障害訓練の舞台裏 - freee Developers Hub",
+      "url": "https://developers.freee.co.jp/entry/redteam-exercise-2026",
+      "score_label": "79 users",
+      "interest_level": 3,
+      "category": "Security",
+      "note": "サプライチェーン攻撃対策の実践事例"
+    },
+    {
+      "id": "hatena_it-ef05069c",
+      "source": "hatena_it",
+      "title": "AIクローラーでインターネット経済がぶっ壊れるかもしれない話｜フォレスト出版",
+      "url": "https://note.com/forestpub/n/n78bd7f8a3955",
+      "score_label": "59 users",
+      "interest_level": 3,
+      "category": "AI",
+      "note": "AIクローラーがWebエコシステム/グロースに与える影響"
+    },
+    {
+      "id": "hatena_it-9f28cadd",
+      "source": "hatena_it",
+      "title": "当社グループでのシステム障害発生について（第2報） | 株式会社ニチレイ",
+      "url": "https://www.nichirei.co.jp/news/2026/513.html",
+      "score_label": "11 users",
+      "interest_level": 2,
+      "category": "Security",
+      "note": "ニチレイのサイバー攻撃に関する公式続報"
+    },
+    {
+      "id": "hatena_it-1e3ea67c",
+      "source": "hatena_it",
+      "title": "ニンテンドーシステムズ、社内CI/CD基盤の構築・運用体制を紹介。GitHub ActionsのSelf-hosted Runner導入事例を解説した「SRE NEXT 2026」講演資料が公開｜ゲームメーカーズ",
+      "url": "https://gamemakers.jp/article/2026_07_15_141297/",
+      "score_label": "10 users",
+      "interest_level": 2,
+      "category": "OSS",
+      "note": "CI/CD基盤構築事例、エンジニアリング文化"
+    },
+    {
+      "id": "hatena_it-b5dcae1d",
+      "source": "hatena_it",
+      "title": "AIエージェント×OAuth 2.0：Device Flowで社内データの安全な認可を実装した話 - エムスリーテックブログ",
+      "url": "https://www.m3tech.blog/entry/2026/07/15/100000",
+      "score_label": "11 users",
+      "interest_level": 3,
+      "category": "Security",
+      "note": "AIエージェントの認可設計、AI×セキュリティに直結"
+    },
+    {
+      "id": "hatena_it-2774cd05",
+      "source": "hatena_it",
+      "title": "日本のエンジニアっていつからこんなに働かなくなったの？",
+      "url": "https://anond.hatelabo.jp/20260715103512",
+      "score_label": "211 users",
+      "interest_level": 2,
+      "category": "Career",
+      "note": "エンジニアの働き方に関する議論"
+    },
+    {
+      "id": "hatena_it-951a4370",
+      "source": "hatena_it",
+      "title": "連載「やってみようVibe Coding 」第2回：ヴァイブ・コーディングでできるのはプログラミングだけじゃない（小泉勝志郎） | テクノエッジ TechnoEdge",
+      "url": "https://www.techno-edge.net/article/2026/07/14/5290.html",
+      "score_label": "23 users",
+      "interest_level": 3,
+      "category": "AI",
+      "note": "Vibe Codingの実践論"
+    },
+    {
+      "id": "hatena_it-b4c109b3",
+      "source": "hatena_it",
+      "title": "自己愛が強いナルシシストは生成AIに過剰な時間を費やしたり過度に依存したりする傾向が強い",
+      "url": "https://gigazine.net/news/20260715-narcissistic-individuals-problematic-ai-use/",
+      "score_label": "48 users",
+      "interest_level": 2,
+      "category": "AI",
+      "note": "生成AI利用と心理傾向に関する研究紹介"
+    },
+    {
+      "id": "zenn-af4eb9ce",
+      "source": "zenn",
+      "title": "Claude CodeのstatusLineのすゝめ-コンテキスト残量とレートリミットを1画面で把握する",
+      "url": "https://zenn.dev/zozotech/articles/cb767af383bc78",
+      "score_label": "",
+      "interest_level": 3,
+      "category": "AI",
+      "note": "Claude Code運用Tips"
+    },
+    {
+      "id": "zenn-6d3091f5",
+      "source": "zenn",
+      "title": "一人前のエンジニアなら、PRでコメントをもらうな。",
+      "url": "https://zenn.dev/headwaters/articles/72c39ad735038d",
+      "score_label": "",
+      "interest_level": 2,
+      "category": "Career",
+      "note": "エンジニアリング文化/キャリア論"
+    },
+    {
+      "id": "zenn-4db27ad9",
+      "source": "zenn",
+      "title": "Claude Code Desktop に追加されたブラウザ機能は、Playwright の代わりになりえるか",
+      "url": "https://zenn.dev/marvelousu/articles/claude-browser-pane-review",
+      "score_label": "",
+      "interest_level": 3,
+      "category": "AI",
+      "note": "Claude Code新機能の検証"
+    },
+    {
+      "id": "zenn-701b2bec",
+      "source": "zenn",
+      "title": "夏休みが始まる前に知っておきたい、Reactエンジニアに優しくなったモバイルアプリ開発の世界",
+      "url": "https://zenn.dev/cybozu_frontend/articles/rn-devmap-in-2026",
+      "score_label": "",
+      "interest_level": 3,
+      "category": "JS/TS",
+      "note": "Reactエンジニア向けモバイル開発動向"
+    },
+    {
+      "id": "zenn-5cee82e4",
+      "source": "zenn",
+      "title": "ローカル LLM を構築した",
+      "url": "https://zenn.dev/neet/articles/11bafab8645995",
+      "score_label": "",
+      "interest_level": 3,
+      "category": "AI",
+      "note": "個人開発でのローカルLLM構築"
+    },
+    {
+      "id": "zenn-0e506f2c",
+      "source": "zenn",
+      "title": "Claude Codeでレガシーシステムの刷新を進めた方法",
+      "url": "https://zenn.dev/knowledgesense/articles/67c61463d9c664",
+      "score_label": "",
+      "interest_level": 3,
+      "category": "AI",
+      "note": "Claude Codeによるレガシー刷新事例"
+    },
+    {
+      "id": "zenn-947d6750",
+      "source": "zenn",
+      "title": "AI時代のObservability設計 - PIIとAIの検索性を両立させ、自動修復する（実践編）",
+      "url": "https://zenn.dev/aircloset/articles/3b8e60fcaab4b7",
+      "score_label": "",
+      "interest_level": 3,
+      "category": "Security",
+      "note": "PII保護とAI可観測性の両立設計"
+    },
+    {
+      "id": "zenn-23357c0c",
+      "source": "zenn",
+      "title": "AIにルールファイルを数ヶ月自動更新させ続けたら、ルールは\"良く\"育ったのか",
+      "url": "https://zenn.dev/r_kaga/articles/c9fcb75f1ff284",
+      "score_label": "",
+      "interest_level": 3,
+      "category": "AI",
+      "note": "AIエージェント運用の長期実践知見"
+    },
+    {
+      "id": "zenn-74286896",
+      "source": "zenn",
+      "title": "調査用スキルを作ってみた",
+      "url": "https://zenn.dev/tokium_dev/articles/building-a-research-skill",
+      "score_label": "",
+      "interest_level": 3,
+      "category": "AI",
+      "note": "Claude Skillの個人開発"
+    },
+    {
+      "id": "zenn-97f82cf5",
+      "source": "zenn",
+      "title": "Agent-as-a-Judgeは本当に必要なのか — 評価にエージェントを使う意味を考える",
+      "url": "https://zenn.dev/takkuhiro/articles/agent-as-a-judge-necessity",
+      "score_label": "",
+      "interest_level": 3,
+      "category": "AI",
+      "note": "AI評価手法の考察"
+    },
+    {
+      "id": "zenn-8798b961",
+      "source": "zenn",
+      "title": "ドメイン駆動設計を実装に落とし込むための設計方針",
+      "url": "https://zenn.dev/shotaro_tsuji/articles/09a99625fba620",
+      "score_label": "",
+      "interest_level": 2,
+      "category": "Tech",
+      "note": "ソフトウェア設計論"
+    },
+    {
+      "id": "zenn-8b3708c7",
+      "source": "zenn",
+      "title": "コミット履歴は`git log --graph --oneline --decorate --all`で十分 — 読み方のポイントを解説する",
+      "url": "https://zenn.dev/ma_sa_shi/articles/9b140537cadd7e",
+      "score_label": "",
+      "interest_level": 2,
+      "category": "Tech",
+      "note": "Git運用Tips"
+    },
+    {
+      "id": "zenn-e7347802",
+      "source": "zenn",
+      "title": "AI臭は語彙よりリズムに出る - 自然な日本語を書くAgent Skillと7モデル×406本の実測",
+      "url": "https://zenn.dev/coji/articles/natural-japanese-ai-smell-lint",
+      "score_label": "",
+      "interest_level": 3,
+      "category": "AI",
+      "note": "AIライティング品質改善の実測記事"
+    },
+    {
+      "id": "zenn-01cca699",
+      "source": "zenn",
+      "title": "非エンジニアが自作アプリを社内にデプロイできる基盤を作った話",
+      "url": "https://zenn.dev/hacobell_dev/articles/369ff476324aae",
+      "score_label": "",
+      "interest_level": 2,
+      "category": "個人開発",
+      "note": "個人開発基盤構築の事例"
+    },
+    {
+      "id": "zenn-e5233130",
+      "source": "zenn",
+      "title": "Cursorに「不要なブランチを整理して」と頼んだら、Dドライブが消えた話",
+      "url": "https://zenn.dev/iwaken71/articles/cursor-agent-d-drive-deleted",
+      "score_label": "",
+      "interest_level": 3,
+      "category": "AI",
+      "note": "AIコーディングツールの事故事例、注意喚起"
+    },
+    {
+      "id": "zenn-b87dd5ea",
+      "source": "zenn",
+      "title": "情報漏洩に敏感な金融機関で、Claude・Gemini・ChatGPTを導入した話",
+      "url": "https://zenn.dev/seiuchi3939/articles/b12d6746d9f187",
+      "score_label": "",
+      "interest_level": 3,
+      "category": "Security",
+      "note": "金融機関でのAI導入と情報漏洩対策"
+    },
+    {
+      "id": "zenn-fd6df3c2",
+      "source": "zenn",
+      "title": "Markdownをpushするだけで社内資料PDFを常に最新に — WIF×Google Driveで鍵レス自動配信",
+      "url": "https://zenn.dev/o2wsu9/articles/36dea065f5d73c",
+      "score_label": "",
+      "interest_level": 2,
+      "category": "個人開発",
+      "note": "自動化・鍵レス配信の個人開発Tips"
+    },
+    {
+      "id": "zenn-1ba0a105",
+      "source": "zenn",
+      "title": "ボードゲーム「ナショナルエコノミー」をブラウザで遊べる非公式サービスを作った",
+      "url": "https://zenn.dev/lambdalisue/articles/introduce-unofficial-national-economy",
+      "score_label": "",
+      "interest_level": 3,
+      "category": "個人開発",
+      "note": "個人開発サービスのBuild in Public的事例"
+    },
+    {
+      "id": "zenn-e49f145e",
+      "source": "zenn",
+      "title": "GitHub Actions の parallel でデプロイは8分→3分、CI はコスト3割減になった",
+      "url": "https://zenn.dev/hatsu/articles/github-actions-steps-parallel",
+      "score_label": "",
+      "interest_level": 2,
+      "category": "Infra",
+      "note": "CI/CD最適化の実践事例"
+    },
+    {
+      "id": "zenn-feda6271",
+      "source": "zenn",
+      "title": "Cloudflareだけで独自ドメインメールをGmailから送受信できるようになってた",
+      "url": "https://zenn.dev/9m/articles/d08dcc093e1bbf",
+      "score_label": "",
+      "interest_level": 2,
+      "category": "個人開発",
+      "note": "個人開発/SaaS運営に役立つインフラTips"
+    },
+    {
+      "id": "qiita-a22ab8c6",
+      "source": "qiita",
+      "title": "あなたの技術ブログの「AI臭さ」を抜くスキル公開します",
+      "url": "https://qiita.com/minorun365/items/699e89544da8b0de300d?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items",
+      "score_label": "",
+      "interest_level": 3,
+      "category": "AI",
+      "note": "AIライティング改善スキルの公開"
+    },
+    {
+      "id": "qiita-65bca937",
+      "source": "qiita",
+      "title": "Railsで学ぶ データ構造入門 〜配列・ハッシュ・木・グラフは実は毎日使っている〜",
+      "url": "https://qiita.com/akachiryo/items/b431a74f1cde18d45ad3?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items",
+      "score_label": "",
+      "interest_level": 2,
+      "category": "Tech",
+      "note": "プログラミング基礎知識の解説"
+    },
+    {
+      "id": "qiita-897db4fe",
+      "source": "qiita",
+      "title": "AI人材は２つに分かれる。あなたが目指すべきはどっち？",
+      "url": "https://qiita.com/prum_sumomo/items/b7bfe27efae0231a09af?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items",
+      "score_label": "",
+      "interest_level": 3,
+      "category": "Career",
+      "note": "AI時代のキャリア論"
+    },
+    {
+      "id": "qiita-0da69aad",
+      "source": "qiita",
+      "title": "「めっちゃカメレオン」が教えてくれた、アイディア力こそAI時代の最強武器",
+      "url": "https://qiita.com/prum_sumomo/items/dbabb5c130aae2566f0f?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items",
+      "score_label": "",
+      "interest_level": 2,
+      "category": "AI",
+      "note": "AI時代のアイディア力に関するエッセイ"
+    },
+    {
+      "id": "qiita-7d1d8c7c",
+      "source": "qiita",
+      "title": "エラー対応理由考えてる？コピペしてAIに聞いてるでしょ",
+      "url": "https://qiita.com/prum_sumomo/items/535a697aeaea41515de9?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items",
+      "score_label": "",
+      "interest_level": 2,
+      "category": "AI",
+      "note": "AI活用時のエンジニアリング姿勢についての指摘"
+    },
+    {
+      "id": "qiita-ae361821",
+      "source": "qiita",
+      "title": "AI⇔人間 がdiff上にコメントを書き合える「hunk」がすごい",
+      "url": "https://qiita.com/kuma_3838/items/14df505c7023f665c585?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items",
+      "score_label": "",
+      "interest_level": 3,
+      "category": "AI",
+      "note": "AI×人間協業ツール"
+    },
+    {
+      "id": "qiita-40ce5608",
+      "source": "qiita",
+      "title": "「頑張ってます」はもう卒業。エンジニアが今日から使える『数値化の鬼』の思考法",
+      "url": "https://qiita.com/Nao52/items/ced302095c8ddd3c8213?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items",
+      "score_label": "",
+      "interest_level": 2,
+      "category": "Career",
+      "note": "エンジニアのキャリア/思考法論"
+    },
+    {
+      "id": "qiita-02ea94c0",
+      "source": "qiita",
+      "title": "僕より入社同期メンバーが先輩に可愛がられる理由、後から気づいた小さな差",
+      "url": "https://qiita.com/prumnn/items/3b1e01cf7a2d77b45da1?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items",
+      "score_label": "",
+      "interest_level": 2,
+      "category": "Career",
+      "note": "職場での人間関係・キャリアに関するエッセイ"
+    },
+    {
+      "id": "qiita-8b0cfb30",
+      "source": "qiita",
+      "title": "コードを書かせるだけは、正直もったいない。Claude Codeを「先生」として使い倒す5つのプロンプト",
+      "url": "https://qiita.com/jqit_suwa/items/2f38d32328996d826d48?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items",
+      "score_label": "",
+      "interest_level": 3,
+      "category": "AI",
+      "note": "Claude Code活用術"
+    },
+    {
+      "id": "qiita-1c520512",
+      "source": "qiita",
+      "title": "エンジニアが知っておくべきIPアドレスの話",
+      "url": "https://qiita.com/AkiraTakasaki/items/cd426dbd97a66dea11cd?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items",
+      "score_label": "",
+      "interest_level": 2,
+      "category": "Tech",
+      "note": "ネットワーク基礎知識"
+    },
+    {
+      "id": "qiita-36ab28d7",
+      "source": "qiita",
+      "title": "AIへの指示力とは「\"未知\"を言語化する力」だった ―― Anthropicのブログを読んで",
+      "url": "https://qiita.com/jinxin4869/items/1ee0282bd44b0376f8af?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items",
+      "score_label": "",
+      "interest_level": 3,
+      "category": "AI",
+      "note": "Anthropicブログを踏まえたプロンプト設計論"
+    },
+    {
+      "id": "qiita-1fc9ef3d",
+      "source": "qiita",
+      "title": "Railsで学ぶ 暗号化とハッシュ 〜master.keyやDeviseは内部で何をしている？〜",
+      "url": "https://qiita.com/akachiryo/items/5a1deaa541d70e11d85f?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items",
+      "score_label": "",
+      "interest_level": 2,
+      "category": "Security",
+      "note": "Webアプリのセキュリティ基礎解説"
+    },
+    {
+      "id": "qiita-b87fc3c6",
+      "source": "qiita",
+      "title": "PyTorchとPySAMACTを比較してみた～Iris分類から見る設計思想の違い～",
+      "url": "https://qiita.com/0kak1/items/38cb88bfe2188b6e3908?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items",
+      "score_label": "",
+      "interest_level": 3,
+      "category": "AI",
+      "note": "機械学習フレームワーク比較"
+    },
+    {
+      "id": "qiita-4350d3fd",
+      "source": "qiita",
+      "title": "ｳﾝ十台の検証環境の管理を1つのWebコンソールに統合した話 〜HTMX + サーバレスで月額50円運用〜",
+      "url": "https://qiita.com/morishio/items/df304e891fb2405a2d30?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items",
+      "score_label": "",
+      "interest_level": 2,
+      "category": "個人開発",
+      "note": "低コスト個人開発運用事例"
+    },
+    {
+      "id": "qiita-29062bf7",
+      "source": "qiita",
+      "title": "Amazon S3上の大量ログを Autonomous AI Lakehouseで分析する 外部表、Parquet、SQL、Vector Search、RAGの使い分け",
+      "url": "https://qiita.com/shirok/items/2eafd347f90e80c46005?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items",
+      "score_label": "",
+      "interest_level": 3,
+      "category": "AI",
+      "note": "AI/RAG活用のデータ分析事例"
+    },
+    {
+      "id": "qiita-336c7cdc",
+      "source": "qiita",
+      "title": "【AI開発】脳の疲弊を減らすためにやったこと 〜魔法の言葉「平易な日本語」〜",
+      "url": "https://qiita.com/damin_chan/items/b10e70399e6830cc6ca8?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items",
+      "score_label": "",
+      "interest_level": 3,
+      "category": "AI",
+      "note": "AI開発における工夫の共有"
+    },
+    {
+      "id": "qiita-5ed4ead8",
+      "source": "qiita",
+      "title": "AIにコードを書かせるなら技術スタックは何がいい？たどり着いたのはTypeScript中心＋必要な部分だけPython/Go",
+      "url": "https://qiita.com/nogataka/items/3be907bb38b545cf4a9e?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items",
+      "score_label": "",
+      "interest_level": 3,
+      "category": "JS/TS",
+      "note": "AI時代の技術スタック選定論"
+    },
+    {
+      "id": "qiita-24e8e0f0",
+      "source": "qiita",
+      "title": "Amazon S3 Vectors で「月額ほぼゼロの RAG」を作ってみた",
+      "url": "https://qiita.com/musa_rock/items/d90580d5cbcb8215d6f9?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items",
+      "score_label": "",
+      "interest_level": 3,
+      "category": "AI",
+      "note": "低コストRAG構築の個人開発事例"
+    },
+    {
+      "id": "qiita-52c4fa38",
+      "source": "qiita",
+      "title": "きのこカンファレンス2026に参加したら40歳以上でも学びがあった",
+      "url": "https://qiita.com/yujittttttt/items/8aede7a08d77924c76d5?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items",
+      "score_label": "",
+      "interest_level": 2,
+      "category": "Career",
+      "note": "カンファレンス参加記、キャリア関連"
+    },
+    {
+      "id": "qiita-27b3cb6a",
+      "source": "qiita",
+      "title": "OCI GoldenGate Veridataを試してみた",
+      "url": "https://qiita.com/tk_miya/items/a95125844059a5f3dfad?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items",
+      "score_label": "",
+      "interest_level": 2,
+      "category": "Tech",
+      "note": "クラウドインフラツールの検証記事"
+    },
+    {
+      "id": "qiita-2b945d9a",
+      "source": "qiita",
+      "title": "なぜ私はRustが全く書けないのか",
+      "url": "https://qiita.com/harupython/items/41b8c271012135228031?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items",
+      "score_label": "",
+      "interest_level": 2,
+      "category": "Tech",
+      "note": "プログラミング学習エッセイ"
+    },
+    {
+      "id": "qiita-6c221612",
+      "source": "qiita",
+      "title": "さくらのAI Engine無料枠でgpt-oss-120bを使う ― Anthropic SDKはauth_token=必須の罠",
+      "url": "https://qiita.com/nomurasan/items/63654a3f9457a8b5ed35?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items",
+      "score_label": "",
+      "interest_level": 3,
+      "category": "AI",
+      "note": "Anthropic SDK利用の実践知見"
+    },
+    {
+      "id": "qiita-db984258",
+      "source": "qiita",
+      "title": "GoでWeb APIを書くときにやりがちなアンチパターン5選",
+      "url": "https://qiita.com/Sakaaaaai/items/05a3419cbe1afc7c3e56?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items",
+      "score_label": "",
+      "interest_level": 2,
+      "category": "Tech",
+      "note": "Web API設計のアンチパターン解説"
+    },
+    {
+      "id": "qiita-4172f458",
+      "source": "qiita",
+      "title": "ECS と Kubernetes の違いを多方面から徹底比較",
+      "url": "https://qiita.com/keitah/items/b35fc1c3b0dd8f6d7052?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items",
+      "score_label": "",
+      "interest_level": 2,
+      "category": "Tech",
+      "note": "インフラ技術比較"
+    },
+    {
+      "id": "qiita-33092f25",
+      "source": "qiita",
+      "title": "ComfyUI × 動画生成AI × Codex で、ゲーム用スプライトアニメを量産するパイプラインを作った話",
+      "url": "https://qiita.com/archeleeds/items/2efad73069b54288deb4?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items",
+      "score_label": "",
+      "interest_level": 3,
+      "category": "AI",
+      "note": "AI生成パイプラインの個人開発事例"
+    },
+    {
+      "id": "qiita-c4481136",
+      "source": "qiita",
+      "title": "GitHub Project に突っ込んだタスクを自動で消化する Loop Engineering 環境を構築した",
+      "url": "https://qiita.com/tomoasleep/items/7f7b6c157b318428a9f6?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items",
+      "score_label": "",
+      "interest_level": 3,
+      "category": "AI",
+      "note": "AIエージェントによる自動化開発環境構築"
+    },
+    {
+      "id": "qiita-a2dbda9a",
+      "source": "qiita",
+      "title": "Elixir製NotebookLMクローン「Notex」をDocker (Ubuntu 24.04) で動かす＆ai& Inference検証",
+      "url": "https://qiita.com/torifukukaiou/items/78314be5a6db95b13286?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items",
+      "score_label": "",
+      "interest_level": 3,
+      "category": "AI",
+      "note": "AI/RAGクローンの個人開発事例"
+    },
+    {
+      "id": "qiita-c948c436",
+      "source": "qiita",
+      "title": "Vue3 のリアクティビティでつまずいたメモ　- クリックで値を更新するには -",
+      "url": "https://qiita.com/yuki_crossroad/items/6fefb54908daa5fa158a?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items",
+      "score_label": "",
+      "interest_level": 2,
+      "category": "JS/TS",
+      "note": "JS/TSフレームワークの実践Tips"
+    },
+    {
+      "id": "security_blog_aikido-ef3af90f",
+      "source": "security_blog_aikido",
+      "title": "AsyncAPIのnpmパッケージがGitHub Actions経由でバックドア化",
+      "url": "https://www.aikido.dev/blog/asyncapi-npm-packages-backdoored-via-github-actions",
+      "score_label": "",
+      "interest_level": 3,
+      "category": "Security",
+      "note": "サプライチェーン攻撃の実例"
+    },
+    {
+      "id": "security_blog_aikido-5439f833",
+      "source": "security_blog_aikido",
+      "title": "Aikido Intelがマルウェアと脆弱性をいち早く検知する仕組み",
+      "url": "https://www.aikido.dev/blog/aikido-intel-detects-malware-vulnerabilities-first",
+      "score_label": "",
+      "interest_level": 3,
+      "category": "Security",
+      "note": "セキュリティ検知技術の解説"
+    },
+    {
+      "id": "security_blog_aikido-6f6cfb71",
+      "source": "security_blog_aikido",
+      "title": "依存関係ファイアウォールとは何か",
+      "url": "https://www.aikido.dev/blog/what-is-a-dependency-firewall",
+      "score_label": "",
+      "interest_level": 3,
+      "category": "Security",
+      "note": "サプライチェーンセキュリティの概念解説"
+    },
+    {
+      "id": "security_blog_wiz-b6aaca53",
+      "source": "security_blog_wiz",
+      "title": "Red Agentの視点：たった一つのbool値がB2Bプラットフォームの与信システムを壊した話",
+      "url": "https://www.wiz.io/blog/red-agent-pov-business-logic",
+      "score_label": "",
+      "interest_level": 3,
+      "category": "Security",
+      "note": "ビジネスロジック脆弱性の事例、AIレッドチームの視点"
+    },
+    {
+      "id": "security_blog_wiz-44664c48",
+      "source": "security_blog_wiz",
+      "title": "M-Red-Team：GitHub Actions経由のAsyncAPIサプライチェーン侵害",
+      "url": "https://www.wiz.io/blog/m-red-team-asyncapi-supply-chain-compromise-via-github-actions",
+      "score_label": "",
+      "interest_level": 3,
+      "category": "Security",
+      "note": "サプライチェーン攻撃の詳細分析"
+    },
+    {
+      "id": "security_blog_wiz-e3cbb70e",
+      "source": "security_blog_wiz",
+      "title": "IaCカバレッジがセキュリティダッシュボードに必要な理由",
+      "url": "https://www.wiz.io/blog/iac-coverage-security-dashboard",
+      "score_label": "",
+      "interest_level": 3,
+      "category": "Security",
+      "note": "IaCセキュリティ運用論"
+    }
+  ]
+}
