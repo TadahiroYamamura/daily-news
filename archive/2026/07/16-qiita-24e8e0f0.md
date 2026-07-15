@@ -1,0 +1,13 @@
+# Amazon S3 Vectors で「月額ほぼゼロの RAG」を作ってみた
+
+- URL: https://qiita.com/musa_rock/items/d90580d5cbcb8215d6f9
+- 収集日: 2026-07-16
+- カテゴリ: AI
+
+## 要約
+
+この記事は、社内ナレッジ検索PoC（会議記録からQA集を作りFAQチャットで検索するRAGアプリ）を、アイドルコストほぼゼロで運用するためにAmazon S3 Vectorsをベクトルストアに採用した事例です。S3 Vectorsは検索エンジンを常時起動しない従量課金型のベクトルストアで、通常のS3バケット（データソース）とは別にベクトルバケットを作成する構成をとり、Bedrock Knowledge BasesのIngestion Job（差分反映は数百ドキュメント規模で約1分）とRetrieve APIを組み合わせて検索・生成を分離しています。コスト面では、OpenSearch Serverlessが常時OCU課金で東京リージョン最低でも月額約$244かかるのに対し、S3 Vectorsはストレージとクエリの従量課金のみでアイドルコストが発生せず、PoCや低頻度アクセス用途に適しています。
+
+一方でトレードオフも明確で、ベクトル検索専用でBM25によるキーワード検索（ハイブリッド検索）ができないため固有名詞や型番の完全一致に弱いこと、メタデータフィルタに1ベクトルあたり約2KB・キー数上限などの制約があること、クエリレイテンシが100ms級であること（ただし対話UIではLLM生成時間に埋もれ体感上は問題にならない）、新サービスゆえ事例が少ないことが挙げられています。
+
+CDK実装では、L1/L2コンストラクトが未整備なため`CfnResource`で`AWS::S3Vectors::VectorBucket`を直接定義する必要があり、Bedrock Knowledge Basesが原文チャンクを格納する`AMAZON_BEDROCK_TEXT`メタデータをインデックス作成時に`NonFilterableMetadataKeys`として宣言し忘れるとIngestionが失敗する点、埋め込みモデル（titan-embed-text-v2、既定1024次元）とベクトルのDimensionを一致させ作成後は変更できない点、Knowledge Baseロールの権限をロール作成と同時にinline policyで確定させる必要がある点が実装上の注意点として整理されています。結論として、高QPSやミリ秒級レイテンシ、ハイブリッド検索が必須の本番用途にはOpenSearch Serverlessが向く一方、PoCや社内ツールなどコスト最小化を優先する場面ではS3 Vectorsが有力な選択肢になるとまとめられています。
