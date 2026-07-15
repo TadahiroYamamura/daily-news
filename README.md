@@ -36,7 +36,7 @@ news/
 
 ## 深掘り→アーカイブの規約
 
-Remote Control経由で「今日のIssueをチェックして」等の依頼を受けた場合、担当するClaudeセッションは以下に従うこと。
+`/deep-dive`スラッシュコマンド(`.claude/commands/deep-dive.md`)、またはRemote Control経由で「今日のIssueをチェックして」等の依頼を受けた場合、担当するClaudeセッションは以下に従うこと。
 
 1. `scripts/gh.sh issue list --label digest --state open --json number,title` 等で対象のIssueを特定する(通常は最新のもの)
 2. `scripts/gh.sh issue view <number> --json body --jq .body` で本文を取得し、`scripts/render_digest.py`の`parse_checked_ids()`と同じルール(`- [x]`の直後に現れる`<!-- id:... -->`)でチェック済みの記事`id`を洗い出す

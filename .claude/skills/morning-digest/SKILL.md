@@ -98,4 +98,4 @@ scripts/post_digest_issue.sh YYYY-MM-DD
 - 投票数(ups)/コメント数/ポイント数が高い記事を優先する
 - `digests/YYYY-MM-DD.json`のYYYY-MM-DDは実行日の日付を使用する
 - 完了したら「ダイジェスト収集完了。」と一言メッセージを返す(Remote Control経由で確認しているユーザーに伝わるようにする)
-- Issueのチェックボックスを見て深掘り・アーカイブする流れ(このスキルの対象外、Remote Control経由で別途依頼された時のみ行う)は`README.md`の「深掘り→アーカイブの規約」を参照
+- Issueのチェックボックスを見て深掘り・アーカイブする流れ(このスキルの対象外)は`/deep-dive`スラッシュコマンドで行う。詳細は`README.md`の「深掘り→アーカイブの規約」を参照
